@@ -5,14 +5,26 @@
    ========================================================================== */
 
 body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
-
 ul.nav li.dropdown:hover > ul.dropdown-menu {
-    margin: 0;
-    display: block;
+     margin: 0;
+     display: block;
+ }
+ul.navbar-right {
+    padding-top: 20;
 }
+.navbar {
+    margin-bottom:0;
+}
+.jumbotron {
+    margin-bottom:0;
+}
+footer a {
+    color: #333;
+    text-decoration: none;
+}
+ul.nav a:hover { color: #ED4B43 !important; }
 
 
 

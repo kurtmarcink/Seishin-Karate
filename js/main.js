@@ -1,6 +1,6 @@
 $(function() {
     $("#about a:contains('About')").parent().addClass('active');
-    $("#history a:contains('History')").parent().parent().parent().addClass('active');
+    $("#history a:contains('History')").parent().parent().parent().addClass('active').parent().addClass('active');
     $("#locations a:contains('Locations')").parent().parent().parent().addClass('active');
     $("#staff a:contains('Staff')").parent().parent().parent().addClass('active');
     $("#tournaments a:contains('Tournaments')").parent().parent().parent().addClass('active');
