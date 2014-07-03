@@ -14,7 +14,7 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
+                <li class="dropdown" id="about-dropdown">
                     <a href="about.php" class="dropdown-toggle disabled" data-toggle="dropdown">About <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="history.php">History</a></li>
