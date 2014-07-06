@@ -12,17 +12,35 @@
 <body id="home">
 <?php include "components/php/navbar.php"; ?>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+<!--Slide images should be 1280x420-->
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="locations.php"><img src="http://maps.googleapis.com/maps/api/staticmap?size=1280x225&maptype=roadmap\&markers=size:mid&markers=scale:2%7Ccolor:red%7C74+Main+St.+Medway,MA%7C11+S.+Main+St.+Sherborn,MA%7C124+East+Central+St.+Natick,MA%7C159+Linden+St.+Wellesley,+MA%7C333+Winter+St.+Weston,MA&scale=2"
+                 alt="Map of karate school locations" class="img-responsive" href="locations.php"></a>
+            <div class="carousel-caption">
+                <h1><span>5 Elite Locations</span></h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="..." alt="...">
+            <div class="carousel-caption">
+            </div>
+        </div>
     </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
 </div>
 
 <div class="container">
-    <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
             <h2>Heading</h2>

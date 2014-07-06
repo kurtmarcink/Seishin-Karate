@@ -10,7 +10,14 @@ body {
 ul.nav li.dropdown:hover > ul.dropdown-menu {
      margin: 0;
      display: block;
- }
+}
+ul.nav a:hover {
+    color: #ED4B43 !important;
+}
+/*padding for navbar social icons*/
+ul.nav > li.social-li {
+    padding-top: 12px;
+}
 ul.navbar-right {
     padding-top: 20;
 }
@@ -20,23 +27,28 @@ ul.navbar-right {
 .jumbotron {
     margin-bottom:0;
 }
+/*customize footer link*/
 footer a {
     color: #333;
     text-decoration: none;
 }
-ul.nav a:hover { color: #ED4B43 !important; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* mouse over link */
+footer a:hover {
+    color: #ED4B43;
+    text-decoration: none;
+}
+/*carousel caption positioning*/
+div.carousel-caption > h1 {
+    position: static;
+    text-align: center;
+    width: 100%;
+}
+/*carousel caption text styling*/
+div.carousel-caption > h1 span {
+    color: white;
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(51, 51, 51, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+}

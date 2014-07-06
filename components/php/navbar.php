@@ -27,12 +27,11 @@
                 <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="padding-top: 12px"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook" style="color: blue;"></a></li>
-                <li style="padding-top: 12px"><a href="http://instagram.com/seishin_karate" target="_blank" title="instagram" class="social instagram"></a></li>
-                <li style="padding-top: 12px"><a href="http://twitter.com/seishin_karate" target="_blank" title="twitter" class="social twitter"></a></li>
-                <li style="padding-top: 12px"><a href="http://youtube.com/seishinkarate" target="_blank" title="youtube" class="social youtube"></a></li>
-                <li style="padding-top: 12px"><a href="http://www.yelp.com/biz/seishin-martial-arts-sport-karate-academy-medway" title="yelp" target="_blank" class="social yelp"></a></li>
-                <i
+                <li class="social-li"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook" style="color: blue;"></a></li>
+                <li class="social-li"><a href="http://instagram.com/seishin_karate" target="_blank" title="instagram" class="social instagram"></a></li>
+                <li class="social-li"><a href="http://twitter.com/seishin_karate" target="_blank" title="twitter" class="social twitter"></a></li>
+                <li class="social-li"><a href="http://youtube.com/seishinkarate" target="_blank" title="youtube" class="social youtube"></a></li>
+                <li class="social-li"><a href="http://www.yelp.com/biz/seishin-martial-arts-sport-karate-academy-medway" title="yelp" target="_blank" class="social yelp"></a></li>
             </ul>
         </div><!--/.navbar-collapse -->
     </div>
