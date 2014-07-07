@@ -18,14 +18,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <a href="locations.php"><img src="http://maps.googleapis.com/maps/api/staticmap?size=1280x225&maptype=roadmap\&markers=size:mid&markers=scale:2%7Ccolor:red%7C74+Main+St.+Medway,MA%7C11+S.+Main+St.+Sherborn,MA%7C124+East+Central+St.+Natick,MA%7C159+Linden+St.+Wellesley,+MA%7C333+Winter+St.+Weston,MA&scale=2"
+<!--            TODO: Maybe move caption up (in main.css)-->
+<!--            image from: http://maps.googleapis.com/maps/api/staticmap?size=1280x225&maptype=roadmap\&markers=size:mid&markers=scale:2%7Ccolor:red%7C74+Main+St.+Medway,MA%7C11+S.+Main+St.+Sherborn,MA%7C124+East+Central+St.+Natick,MA%7C159+Linden+St.+Wellesley,+MA%7C333+Winter+St.+Weston,MA&scale=2-->
+            <a href="locations.php"><img src="images/carousel_map.png" width="1280" height="225"
                  alt="Map of karate school locations" class="img-responsive" href="locations.php"></a>
             <div class="carousel-caption">
                 <h1><span>5 Elite Locations</span></h1>
             </div>
         </div>
         <div class="item">
-            <img src="..." alt="...">
+            <img src="..." alt="..." width="1280" height="225">
             <div class="carousel-caption">
             </div>
         </div>
