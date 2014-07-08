@@ -43,6 +43,10 @@ div.carousel-caption > h1 {
     text-align: center;
     width: 100%;
 }
+.form-inline .form-group{
+    margin-left: 0;
+    margin-right: 0;
+}
 /*carousel caption text styling*/
 div.carousel-caption > h1 span {
     color: white;

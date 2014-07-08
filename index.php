@@ -60,8 +60,6 @@
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
     </div>
-
-    <hr>
     <?php include "components/php/footer.php"; ?>
 </div> <!-- /container -->
 <?php include "components/php/endScripts.php"; ?>

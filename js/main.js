@@ -7,4 +7,6 @@ $(function() {
     $("#programs a:contains('Programs')").parent().addClass('active');
     $("#social a:contains('Social')").parent().addClass('active');
     $("#contact a:contains('Contact Us')").parent().addClass('active');
+
+    $.get(http://api.yelp.com/v2/business/seishin-martial-arts-sport-karate-academy-medway)
 })
