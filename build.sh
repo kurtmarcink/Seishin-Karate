@@ -19,31 +19,31 @@ for i in "${files[@]}";
 do
 	backup=$i.bak
 	echo "update Modernizr: $i"
-	sed -i.bak "/BUILD:MODERNIZR/ r build-package/components/modernizrCheck.html" $i
+	sed -i.bak "/BUILD:MODERNIZR/ r build-package/components/HTML-Snippets/modernizrCheck.html" $i
 	echo "delete backup: $backup"
 	rm -f $backup
 
 	backup=$i.bak
 	echo "update beginScripts: $i"
-	sed -i.bak "/BUILD:BEGINSCRIPTS/ r build-package/components/beginScripts.html" $i
+	sed -i.bak "/BUILD:BEGINSCRIPTS/ r build-package/components/HTML-Snippets/beginScripts.html" $i
 	echo "delete backup: $backup"
 	rm -f $backup
 
 	backup=$i.bak
 	echo "update navbar: $i"
-	sed -i.bak "/BUILD:NAVBAR/ r build-package/components/navbar.html" $i
+	sed -i.bak "/BUILD:NAVBAR/ r build-package/components/HTML-Snippets/navbar.html" $i
 	echo "delete backup: $backup"
 	rm -f $backup
 
 	backup=$i.bak
 	echo "update footer: $i"
-	sed -i.bak "/BUILD:FOOTER/ r build-package/components/footer.html" $i
+	sed -i.bak "/BUILD:FOOTER/ r build-package/components/HTML-Snippets/footer.html" $i
 	echo "delete backup: $backup"
 	rm -f $backup
 
 	backup=$i.bak
 	echo "update endScripts: $i"
-	sed -i.bak "/BUILD:ENDSCRIPTS/ r build-package/components/endScripts.html" $i
+	sed -i.bak "/BUILD:ENDSCRIPTS/ r build-package/components/HTML-Snippets/endScripts.html" $i
 	echo "delete backup: $backup"
 	rm -f $backup
 done
