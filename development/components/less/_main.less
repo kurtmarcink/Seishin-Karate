@@ -1,6 +1,7 @@
 /* ==========================================================================
    custom styles
    ========================================================================== */
+@import "variables.less";
 
 body {
   padding-bottom: 20px;
@@ -26,13 +27,13 @@ ul.navbar-right {
   margin-bottom:0;
 }
 /*customize footer link*/
-footer a {
+.no-link-decor {
   color: #333;
   text-decoration: none;
 }
 /* mouse over link */
 footer a:hover {
-  color: #ED4B43;
+  color: @brand-primary;
   text-decoration: none;
 }
 /*carousel caption positioning*/
@@ -53,4 +54,19 @@ div.carousel-caption > h1 span {
   background: rgba(51, 51, 51, 0.7);
   border-radius: 10px;
   padding: 10px;
+}
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+hr.contact-sidebar {
+  width: 280px;
 }

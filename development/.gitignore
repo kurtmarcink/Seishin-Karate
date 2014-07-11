@@ -7,3 +7,5 @@ out/
 atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 config.codekit
+.csscomb.json
+.csslintrc
