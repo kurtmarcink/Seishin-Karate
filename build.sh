@@ -47,3 +47,6 @@ do
 	echo "delete backup: $backup"
 	rm -f $backup
 done
+
+echo "delete components folder"
+rm -r build-package/components

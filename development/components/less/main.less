@@ -1,0 +1,89 @@
+/* ==========================================================================
+   custom styles
+   ========================================================================== */
+@import "variables.less";
+
+body {
+  padding-bottom: 20px;
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+  margin: 0;
+  display: block;
+}
+ul.nav a:hover {
+  color: #ED4B43 !important;
+}
+/*padding for navbar social icons*/
+ul.nav > li.social-li {
+  padding-top: 12px;
+}
+ul.navbar-right {
+  padding-top: 20;
+}
+.navbar {
+  margin-bottom:0;
+}
+.jumbotron {
+  margin-bottom:0;
+}
+/*customize footer link*/
+a {
+  color: @text-color;
+  &:hover {
+    text-decoration: none;
+    color: @brand-primary;
+  }
+}
+
+.breadcrumb {
+  a {
+    color: @gray-light;
+    &:hover {
+      text-decoration: none;
+      color: @brand-primary;
+    }
+  }
+  span {
+    color: @brand-primary;
+  }
+}
+/*carousel caption positioning*/
+div.carousel-caption > h1 {
+  position: static;
+  text-align: center;
+  width: 100%;
+}
+.form-inline .form-group{
+  margin-left: 0;
+  margin-right: 0;
+}
+/*carousel caption text styling*/
+div.carousel-caption > h1 span {
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(51, 51, 51, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+}
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+hr.contact-sidebar {
+  width: 280px;
+}
+
+.slider-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
