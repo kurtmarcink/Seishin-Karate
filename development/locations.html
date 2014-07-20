@@ -7,16 +7,140 @@
     <title>Locations - Seishin Martial Arts / Sport Karate Academy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!--BUILD:BEGINSCRIPTS-->
     <!--END:BEGINSCRIPTS-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        #map{
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function initialize() {
+            var natickJson, natickHtml, medwayJson, medwayHtml, sherbornJson, sherbornHtml, locations;
+            natickId = {
+                placeId: "ChIJldxiFlWG44kRIcGAOMhoOvQ"
+            },
+                    medwayId = {
+                        placeId: "ChIJ0fcOX_Fw5IkRG9qI1CSPhec"
+                    },
+                    sherbornId = {
+                        placeId: "ChIJWXXKjxB45IkRc1Mr--1Wl9k"
+                    }
+            locations = [
+                [42.299368, -71.293149, "Seishin Wellesley"],
+                [42.288411, -71.336564, "Seishin Natick"],
+                [42.151688, -71.412065, "Seishin Medway"],
+                [42.240563, -71.369701, "Seishin Sherborn"],
+                [42.323506, -71.325346, "Seishin Weston"]
+
+            ];
+
+            var infowindow = new google.maps.InfoWindow({maxWidth: 200});
+            var service = new google.maps.places.PlacesService(map);
+            $.when(
+                            service.getDetails(natickId, function(place, status) {
+                                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                    natickJson = place;
+                                }
+                            }),
+                            service.getDetails(medwayId, function(place, status) {
+                                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                    medwayJson = place;
+                                }
+                            }),
+                            service.getDetails(sherbornId, function(place, status) {
+                                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                    sherbornJson = place;
+                                }
+                            })
+                    ).then(function() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: new google.maps.LatLng(42.240524, -71.369647),
+                            zoom: 11
+                        });
+                        for (i = 0; i < locations.length; i++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+                                map: map,
+                                title: locations[i][2]
+                            });
+                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                return function () {
+                                    var html;
+                                    if (marker.title === "Seishin Medway") {
+                                        html = '<b>Seishin Medway</b>&nbsp;&nbsp;' + getClosed(medwayJson) + '<br>' +
+                                               '<a href="tel:508-533-1501">(508) 533-1501</a><br>' +
+                                                '<a href="https://plus.google.com/107453042588075303931/about?hl=en&review=1" target="_blank"><span class="glyphicon glyphicon-pencil" style="font-size: 20px;padding-left: 3px; padding-right: 5px;" title="Write a Review of Seishin in Medway"></span></a>' +
+                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Medway,+MA" target="_blank"><span class="glyphicon glyphicon-road" style="font-size: 20px;padding-left: 5px; padding-right: 5px" title="Directions to Seishin in Medway"></span></a>' +
+                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 7px"></i></a>' + '<br>' +
+                                                getPhotos(medwayJson);
+                                    }
+                                    else if (marker.title === "Seishin Sherborn") {
+                                        html = '<b>Seishin Sherborn</b>&nbsp;&nbsp;' + getClosed(sherbornJson)  + '<br>' +
+                                                '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
+                                                '<a href="https://plus.google.com/115315292366238841081/about?hl=en&review=1" target="_blank"><span class="glyphicon glyphicon-pencil" style="font-size: 20px;padding-left: 3px; padding-right: 3px;" title="Write a Review of Seishin in Sherborn"></span></a>' +
+                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Sherborn,+MA" target="_blank"><span class="glyphicon glyphicon-road" style="font-size: 20px;padding-left: 3px" title="Directions to Seishin in Sherborn"></span></a>' +
+                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 7px"></i></a>' + '<br>' +
+                                                getPhotos(sherbornJson);
+                                    }
+                                    else if (marker.title === "Seishin Natick") {
+                                        html = '<b>Seishin Natick</b>&nbsp;&nbsp;' + getClosed(natickJson) + '<br>' +
+                                                '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
+                                                '<a href="https://plus.google.com/100706843756981282186/about?hl=en&review=1" target="_blank"><span class="glyphicon glyphicon-pencil" style="font-size: 20px;padding-left: 3px; padding-right: 3px;" title="Write a Review of Seishin in Natick"></span></a>' +
+                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Natick,+MA" target="_blank"><span class="glyphicon glyphicon-road" style="font-size: 20px;padding-left: 3px" title="Directions to Seishin in Natick"></span></a>' +
+                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 7px"></i></a>' + '<br>' +
+                                                getPhotos(natickJson);
+                                    }
+                                    infowindow.setContent(html);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, i));
+                        }
+                    })
+
+            function getClosed(json) {
+                console.log(json.opening_hours);
+                if (json.opening_hours.open_now) {
+                    return '<i class="fa fa-circle" style="color:#23D613" data-toggle="tooltip" title="Currently Open"></i>'
+                }
+                else {
+                    return '<i class="fa fa-circle" style="color:#ed4b43" data-toggle="tooltip" title="Currently Closed"></i>'
+                }
+            }
+            function getPhotos(json) {
+                photos = "";
+                for (i = 0; i < 4; i++) {
+                    photos += '<a href="' + json.photos[i].getUrl({'maxHeight': json.photos[i].height}) + '" target="_blank"><img src="' + json.photos[i].getUrl({'maxHeight': 25}) + '" style="padding: 5px 1px" title="Click to Enlarge">';
+                }
+                console.log(photos);
+                return photos;
+            }
+
+        }
+
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+    </script>
 </head>
 <body id="locations">
 <!--BUILD:NAVBAR-->
 <!--END:NAVBAR-->
-<!--BUILD:FOOTER-->
-<!--END:FOOTER-->
-</div> <!-- /container -->
+<div class="container">
+    <div id="map"></div>
+    <!--BUILD:FOOTER-->
+    <!--END:FOOTER-->
+</div>
+<!-- /container -->
 <!--BUILD:ENDSCRIPTS-->
 <!--END:ENDSCRIPTS-->
 </body>

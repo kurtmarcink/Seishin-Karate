@@ -1,0 +1,22 @@
+{
+  "name": "WebProject",
+  "version": "2.0.0",
+  "description": "Seishin Martial Arts Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurtmarcink/Web-Project.git"
+  },
+  "author": "Kurt Marcinkiewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurtmarcink/Web-Project/issues"
+  },
+  "homepage": "https://github.com/kurtmarcink/Web-Project",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
