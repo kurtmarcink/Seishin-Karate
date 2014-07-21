@@ -7,4 +7,5 @@ out/
 atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 config.codekit
-build-package/
+node_modules/
+grunt-aws.json
