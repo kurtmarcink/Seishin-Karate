@@ -14,10 +14,11 @@
 
     <!--BUILD:BEGINSCRIPTS-->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/social.css">
-    <script src="js/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/vendor/social.min.css">
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <script src="js/modernizr.js"></script>
     <!--END:BEGINSCRIPTS-->
 </head>
 <body id="about">
@@ -75,18 +76,18 @@
 <!--BUILD:FOOTER-->
 <hr>
 <footer>
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> <a class="no-link-decor" href="about.html">Seishin Martial Arts / Sport Karate Academy</a></p>
+    <p>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> <a class="no-link-decor" href="about.html">&nbsp;Seishin Martial Arts / Sport Karate Academy</a></p>
 </footer>
 <!--END:FOOTER-->
 </div> <!-- /container -->
 <!--BUILD:ENDSCRIPTS-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script async src="js/jquery.min.js"><\/script>')</script>
 
 <script src="js/bootstrap.min.js"></script>
 
-<script src="js/plugins.min.js"></script>
-<script src="js/main.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 
 <script type="text/javascript">
     var __lc = {};
@@ -100,7 +101,7 @@
 </script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
+<script async>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
         function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
         e=o.createElement(i);r=o.getElementsByTagName(i)[0];

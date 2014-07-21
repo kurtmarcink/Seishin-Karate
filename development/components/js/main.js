@@ -1,4 +1,5 @@
-$(function() {
+'use strict';
+$(function () {
     $("#about a:contains('About')").parent().addClass('active');
     $("#history a:contains('History')").parent().parent().parent().addClass('active').parent().addClass('active');
     $("#locations a:contains('Locations')").parent().parent().parent().addClass('active');
