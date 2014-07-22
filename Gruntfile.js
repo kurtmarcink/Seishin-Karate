@@ -35,12 +35,12 @@ module.exports = function(grunt) {
             }
         },
         less: {
-            options: {
-                paths: ["build-package/less"]
-            },
+//            options: {
+//                paths: ["development/less"]
+//            },
             files: {
                 expand: true,
-                cwd: 'build-package/less',
+                cwd: 'development/components/less',
                 src: ['bootstrap.less', 'main.less'],
                 dest: 'build-package/css',
                 ext: '.css'
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ['last 4 versions']
+                browsers: ['last 3 versions']
             },
             dist: {
                 files: {
@@ -60,7 +60,9 @@ module.exports = function(grunt) {
             lax: {
                 options: {
                     "qualified-headings": false,
-                    "important": false
+                    "important": false,
+                    "vendor-prefix": false,
+                    "gradients": false
                 },
                 expand: true,
                 cwd: 'build-package',
@@ -181,17 +183,17 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('css', [
-        'newer:less',
-        'newer:autoprefixer',
-        'newer:csslint:lax',
-        'newer:cssmin',
+        'less',
+        'autoprefixer',
+        'csslint:lax',
+        'cssmin',
         'copy:css'
     ]);
 
     // Default task(s).
     grunt.registerTask('default', [
         'concurrent:beg',
-        'newer:jshint',
+        'jshint',
         'concurrent:middle',
         'concurrent:end'
     ]);

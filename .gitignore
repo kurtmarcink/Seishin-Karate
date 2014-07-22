@@ -9,4 +9,3 @@ com_crashlytics_export_strings.xml
 config.codekit
 node_modules/
 grunt-aws.json
-node_modules/

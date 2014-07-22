@@ -43,25 +43,11 @@ a:hover {
   color: #ed4b43;
 }
 /*carousel caption positioning*/
-div.carousel-caption > h1 {
-  position: static;
-  text-align: center;
-  width: 100%;
-}
 .form-inline .form-group {
   margin-left: 0;
   margin-right: 0;
 }
 /*carousel caption text styling*/
-div.carousel-caption > h1 span {
-  color: white;
-  letter-spacing: -1px;
-  background: #000000;
-  /* fallback color */
-  background: rgba(51, 51, 51, 0.7);
-  border-radius: 10px;
-  padding: 10px;
-}
 /* centered columns styles */
 .row-centered {
   text-align: center;
@@ -81,4 +67,18 @@ div.carousel-caption > h1 span {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.page-header {
+  padding: 80px 0;
+  position: relative;
+  background-color: #ed4b43;
+  background-image: -webkit-linear-gradient(top, #ed4b43, #e72016);
+  background-image: linear-gradient(to bottom, #ed4b43, #e72016);
+  background-repeat: repeat-x;
+  margin-top: 0;
+}
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
