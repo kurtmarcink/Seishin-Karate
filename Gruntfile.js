@@ -177,7 +177,7 @@ module.exports = function(grunt) {
         },
         concurrent: {
             beg: ['shell', 'clean'],
-            middle: ['css', 'copy:fonts', 'newer:uglify', 'imagemin'],
+            middle: ['css', 'copy:fonts', 'uglify', 'imagemin'],
             end: ['modernizr', 'htmlmin']
         }
     });
@@ -195,7 +195,14 @@ module.exports = function(grunt) {
         'concurrent:beg',
         'jshint',
         'concurrent:middle',
-        'concurrent:end'
+        'modernizr',
+        'htmlmin'
+    ]);
+
+    grunt.registerTask('short', [
+        'concurrent:beg',
+        'jshint',
+        'css'
     ]);
 
     grunt.registerTask('upload', [

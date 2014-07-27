@@ -26,120 +26,6 @@
             margin-top: 20px;
         }
     </style>
-    <script>
-        function initialize() {
-            var natickJson, natickHtml, medwayJson, medwayHtml, sherbornJson, sherbornHtml, locations;
-            natickId = {
-                placeId: "ChIJldxiFlWG44kRIcGAOMhoOvQ"
-            },
-                    medwayId = {
-                        placeId: "ChIJ0fcOX_Fw5IkRG9qI1CSPhec"
-                    },
-                    sherbornId = {
-                        placeId: "ChIJWXXKjxB45IkRc1Mr--1Wl9k"
-                    }
-            locations = [
-                [42.299368, -71.293149, "Seishin Wellesley"],
-                [42.288411, -71.336564, "Seishin Natick"],
-                [42.151688, -71.412065, "Seishin Medway"],
-                [42.240563, -71.369701, "Seishin Sherborn"],
-                [42.323506, -71.325346, "Seishin Weston"]
-
-            ];
-
-            var infowindow = new google.maps.InfoWindow({maxWidth: 200});
-            var service = new google.maps.places.PlacesService(map);
-            $.when(
-                            service.getDetails(natickId, function(place, status) {
-                                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                    natickJson = place;
-                                }
-                            }),
-                            service.getDetails(medwayId, function(place, status) {
-                                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                    medwayJson = place;
-                                }
-                            }),
-                            service.getDetails(sherbornId, function(place, status) {
-                                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                    sherbornJson = place;
-                                }
-                            })
-                    ).then(function() {
-                        map = new google.maps.Map(document.getElementById('map'), {
-                            center: new google.maps.LatLng(42.240524, -71.369647),
-                            zoom: 11
-                        });
-                        for (i = 0; i < locations.length; i++) {
-                            marker = new google.maps.Marker({
-                                position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-                                map: map,
-                                title: locations[i][2]
-                            });
-                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                return function () {
-                                    var html;
-                                    if (marker.title === "Seishin Medway") {
-                                        html = '<b>Seishin Medway</b>&nbsp;&nbsp;' + getClosed(medwayJson) + '<br>' +
-                                                '<a href="tel:508-533-1501">(508) 533-1501</a><br>' +
-                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Medway,+MA" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" title="Directions to Seishin in Medway"></i></a>' +
-                                                '<a href="https://plus.google.com/107453042588075303931/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" title="Write a Review of Seishin in Medway"></i></a>' +
-                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 6px"></i></a>' + '<br>' +
-                                                getPhotos(medwayJson);
-                                    }
-                                    else if (marker.title === "Seishin Sherborn") {
-                                        html = '<b>Seishin Sherborn</b>&nbsp;&nbsp;' + getClosed(sherbornJson)  + '<br>' +
-                                                '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
-                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Sherborn,+MA" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" title="Directions to Seishin in Sherborn"></i></a>' +
-                                                '<a href="https://plus.google.com/115315292366238841081/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" title="Write a Review of Seishin in Sherborn"></i></a>' +
-                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 6px"></i></a>' + '<br>' +
-                                                getPhotos(sherbornJson);
-                                    }
-                                    else if (marker.title === "Seishin Natick") {
-                                        html = '<b>Seishin Natick</b>&nbsp;&nbsp;' + getClosed(natickJson) + '<br>' +
-                                                '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
-                                                '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Karate+Natick,+MA" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" title="Directions to Seishin in Natick"></i></a>' +
-                                                '<a href="https://plus.google.com/100706843756981282186/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 5px; padding-right: 5px;" title="Write a Review of Seishin in Natick"></i></a>' +
-                                                '<a href="#"><i class="fa fa-info-circle" title="More Information" style="font-size: 27px; padding-left: 6px"></i></a>' + '<br>' +
-                                                getPhotos(natickJson);
-                                    }
-                                    infowindow.setContent(html);
-                                    infowindow.open(map, marker);
-                                }
-                            })(marker, i));
-                        }
-                    })
-
-            function getClosed(json) {
-                console.log(json.opening_hours);
-                if (json.opening_hours.open_now) {
-                    return '<i class="fa fa-circle" style="color:#23D613" data-toggle="tooltip" title="Currently Open"></i>'
-                }
-                else {
-                    return '<i class="fa fa-circle" style="color:#ed4b43" data-toggle="tooltip" title="Currently Closed"></i>'
-                }
-            }
-            function getPhotos(json) {
-                photos = "";
-                for (i = 0; i < 4; i++) {
-                    photos += '<a href="' + json.photos[i].getUrl({'maxHeight': json.photos[i].height}) + '" target="_blank"><img src="' + json.photos[i].getUrl({'maxHeight': 25}) + '" style="padding: 5px 1px" title="Click to enlarge">';
-                }
-                console.log(photos);
-                return photos;
-            }
-
-        }
-
-
-        function loadScript() {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&' + 'callback=initialize';
-            document.body.appendChild(script);
-        }
-
-        window.onload = loadScript;
-    </script>
 </head>
 <body id="locations">
 <!--BUILD:NAVBAR-->
@@ -172,7 +58,7 @@
                 <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="social-li"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook" style="color: blue;"></a></li>
+                <li class="social-li"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook"></a></li>
                 <li class="social-li"><a href="http://instagram.com/seishin_karate" target="_blank" title="instagram" class="social instagram"></a></li>
                 <li class="social-li"><a href="http://twitter.com/seishin_karate" target="_blank" title="twitter" class="social twitter"></a></li>
                 <li class="social-li"><a href="http://youtube.com/seishinkarate" target="_blank" title="youtube" class="social youtube"></a></li>
@@ -184,11 +70,102 @@
 <!--END:NAVBAR-->
 <main class="page-header" id="content" role="main">
     <div class="container">
-        <h1>Our Locations</h1>
+        <h1>Five Elite Locations</h1>
     </div>
 </main>
+<style>
+    .tooltip {
+        position: fixed;
+    }
+</style>
 <div class="container">
+    <ol class="breadcrumb">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active">Locations</li>
+    </ol>
     <div id="map"></div>
+    <div class="location-drilldown">
+        <!--Medway-->
+        <h2 id="Medway-Title"><a class="location-item" id="Medway">Medway&nbsp;</a><i class="fa fa-circle" id="Medway-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <div class="btn-group">
+            <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
+            <a href="https://plus.google.com/107453042588075303931/about?hl=en&review=1" target="_blank" role="button" class="btn btn-default btn-xs">Write A Review</a>
+        </div>
+        <br>
+        <br>
+        <b>Chief Instructor:&nbsp;</b>Tim Pettepit<br>
+            <address>
+                <b>Address:&nbsp;</b><a href="https://www.google.com/maps/place/Seishin+Martial+Arts+%2F+Sport+Karate+Academy/@42.151525,-71.412044,17z" target="_blank">74 Main St, Medway, MA 02053</a><br>
+                <b>Phone:&nbsp;</b><a href="tel:508-533-1501">(508) 533-1501</a><br>
+            </address>
+        <p>Our original location, our Medway academy has been providing quality martial arts training for over a decade and is conveniently located near Milford, Bellingham, Franklin, Millis, Holliston, and Norfolk. Check out photos of our Medway school exclusively on our facebook page!</p>
+        <hr>
+        <!--Natick-->
+        <h2 id="Natick-Title"><a class="location-item" id="Natick">Natick&nbsp;</a><i class="fa fa-circle" id="Natick-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip"  data-placement="right" title="Status Unavailable"></i></h2>
+        <div class="btn-group">
+            <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts%2F+Sport+Karate+Academy,+124+E+Central+St,+Natick,+MA+01760" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
+            <a href="https://plus.google.com/100706843756981282186/about?hl=en&review=1" target="_blank" role="button" class="btn btn-default btn-xs">Write A Review</a>
+        </div>
+        <br>
+        <br>
+        <b>Chief Instructor:&nbsp;</b>Steven Hung<br>
+        <address>
+            <b>Address:&nbsp;</b><a href="https://www.google.com/maps/place/Seishin+Martial+Arts%2F+Sport+Karate+Academy/@42.28671,-71.336839,17z/data=!4m7!1m4!3m3!1s0x89e478108fca7559:0xd99756edfb2b5373!2sSeishin+Martial+Arts+%2F+Sport+Karate+Academy!3b1!3m1!1s0x0:0xf43a68c83880c121" target="_blank">124 East Central St, Natick, MA 01760</a><br>
+            <b>Phone:&nbsp;</b><a href="tel:508-433-0901">(508) 433-0901</a><br>
+        </address>
+        <p>Located at Rocky DiRico’s Kenpo Karate, Seishin proudly brings it’s exciting programs to the Natick area. Located near the Wayland, Framingham, and Wellesley area.</p>
+        <hr>
+        <!--Sherborn-->
+        <h2 id="Sherborn-Title"><a class="location-item" id="Sherborn">Sherborn&nbsp;</a><i class="fa fa-circle" id="Sherborn-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <div class="btn-group">
+            <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+11+S+Main+St,+Sherborn,+MA+01770" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
+            <a href="https://plus.google.com/115315292366238841081/about?hl=en&review=1" target="_blank" role="button" class="btn btn-default btn-xs">Write A Review</a>
+        </div>
+        <br>
+        <br>
+        <b>Chief Instructor:&nbsp;</b>Eric Hung<br>
+        <address>
+            <b>Address:&nbsp;</b><a href="https://www.google.com/maps/place/Seishin+Martial+Arts+%2F+Sport+Karate+Academy/@42.240337,-71.369658,17z" target="_blank">11 South Main St, Sherborn, MA 01770</a><br>
+            <b>Phone:&nbsp;</b><a href="tel:508-433-0901">(508) 433-0901</a><br>
+        </address>
+        <p>Opened in 2007, our Sherborn location is “Taking Excellence To A New Level” conveniently near Dover, Millis, Medfield, Natick, Framingham, and Holliston. Check out photos of our Sherborn school exclusively on our facebook page!</p>
+        <hr>
+        <!--Wellesley-->
+        <h2 id="Wellesley-Title"><a class="location-item" id="Wellesley">Wellesley&nbsp;</a><i class="fa fa-circle" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <div class="btn-group">
+            <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Miss+Michelle\'s+Center+for+the+Performing+Arts,+159+Linden+St,+Wellesley,+MA+02482" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Write A Review</a>
+        </div>
+        <br>
+        <br>
+        <b>Chief Instructor:&nbsp;</b>Steven Hung<br>
+        <address>
+            <b>Address:&nbsp;</b>159 Linden St. Wellesley, MA 02482<br>
+            <b>Phone:&nbsp;</b><a href="tel:508-319-1775">(508) 319-1775</a><br>
+        </address>
+        <p>Located at Miss Michelle’s Center for the Performing Arts. Across from Roche Brothers, Starbucks, and next to Beacon Hill Athletic Club.</p>
+        <hr>
+        <!--Weston-->
+        <h2 id="Weston-Title"> <a class="location-item" id="Weston">Weston&nbsp;</a><i class="fa fa-circle" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <div class="btn-group">
+            <a href="https://maps.google.com/maps?saddr=My+Location&daddr=The+Rivers+School,+333+Winter+Street,+Weston,+MA+02493" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
+            <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
+            <a href="#" role=button" class="btn btn-default btn-xs">Write A Review</a>
+        </div>
+        <br>
+        <br>
+        <b>Chief Instructor:&nbsp;</b>Steven Hung<br>
+        <address>
+            <b>Address:&nbsp;</b>333 Winter St, Weston, MA 02493<br>
+            <b>Phone:&nbsp;</b><a href="tel:508-319-1775">(508) 319-1775</a><br>
+        </address>
+        <p>Seishin brings its popular summer programs to Rivers Day Camp in Weston! For more information visit riversdaycamp.org.</p>
+    </div>
     <!--BUILD:FOOTER-->
 <hr>
 <footer>
@@ -227,5 +204,6 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 <!--END:ENDSCRIPTS-->
+<script src="js/locationMap.js"></script>
 </body>
 </html>

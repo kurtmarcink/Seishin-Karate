@@ -8,5 +8,5 @@ $(function () {
     $("#programs a:contains('Programs')").parent().addClass('active');
     $("#social a:contains('Social')").parent().addClass('active');
     $("#contact a:contains('Contact Us')").parent().addClass('active');
-    $("a.tooltipLink").tooltip();
+    $("#TOOLTIP").tooltip();
 });

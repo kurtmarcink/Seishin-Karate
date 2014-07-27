@@ -8,18 +8,12 @@ ul.nav .dropdown:hover > .dropdown-menu {
   margin: 0;
   display: block;
 }
-ul.nav a:hover {
-  color: #ED4B43 !important;
-}
 /*padding for navbar social icons*/
 ul.nav > .social-li {
   padding-top: 12px;
 }
 .navbar-right {
   padding-top: 20;
-}
-.navbar {
-  margin-bottom: 0;
 }
 .jumbotron {
   margin-bottom: 0;
@@ -69,16 +63,16 @@ a:hover {
   margin-right: auto;
 }
 .page-header {
-  padding: 80px 0;
+  padding: 50px 0;
   position: relative;
   background-color: #ed4b43;
-  background-image: -webkit-linear-gradient(top, #ed4b43, #e72016);
-  background-image: linear-gradient(to bottom, #ed4b43, #e72016);
+  background-image: -webkit-linear-gradient(top, #ed4b43, #de1f15);
+  background-image: linear-gradient(to bottom, #ed4b43, #de1f15);
   background-repeat: repeat-x;
   margin-top: 0;
 }
 h1 {
   text-align: center;
   color: white;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
 }
