@@ -20,10 +20,18 @@
     <script src="js/modernizr.js"></script>
     <!--END:BEGINSCRIPTS-->
     <style>
-        #map{
+        h2 > .fa-circle {
+            color:#6f6f6f;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+        #map {
             height: 500px;
             width: 100%;
             margin-top: 20px;
+        }
+        .tooltip {
+            position: fixed;
         }
     </style>
 </head>
@@ -49,9 +57,17 @@
                     <a href="about.html" class="dropdown-toggle disabled" data-toggle="dropdown">About <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="history.html">History</a></li>
-                        <li><a href="locations.html">Locations</a></li>
                         <li><a href="staff.html">Staff</a></li>
                         <li><a href="tournaments.html">Tournaments</a></li>
+                    </ul>
+                <li class="dropdown">
+                    <a href="locations.html" class="dropdown-toggle disabled" data-toggle="dropdown">Locations <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="medway.html">Medway</a></li>
+                        <li><a href="natick.html">Natick</a></li>
+                        <li><a href="sherborn.html">Sherborn</a></li>
+                        <li><a href="wellesley.html">Wellesley</a></li>
+                        <li><a href="weston.html">Weston</a></li>
                     </ul>
                 <li id="programs-nav"><a href="programs.html">Programs</a></li>
                 <li><a href="social.html">Social</a></li>
@@ -73,11 +89,6 @@
         <h1>Five Elite Locations</h1>
     </div>
 </main>
-<style>
-    .tooltip {
-        position: fixed;
-    }
-</style>
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -87,7 +98,7 @@
     <div id="map"></div>
     <div class="location-drilldown">
         <!--Medway-->
-        <h2 id="Medway-Title"><a class="location-item" id="Medway">Medway&nbsp;</a><i class="fa fa-circle" id="Medway-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <h2 id="Medway-Title"><a class="location-item" id="Medway"><a href="medway.html">Medway</a>&nbsp;</a><i class="fa fa-circle" id="Medway-Status" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
         <div class="btn-group">
             <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
             <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
@@ -103,7 +114,7 @@
         <p>Our original location, our Medway academy has been providing quality martial arts training for over a decade and is conveniently located near Milford, Bellingham, Franklin, Millis, Holliston, and Norfolk. Check out photos of our Medway school exclusively on our facebook page!</p>
         <hr>
         <!--Natick-->
-        <h2 id="Natick-Title"><a class="location-item" id="Natick">Natick&nbsp;</a><i class="fa fa-circle" id="Natick-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip"  data-placement="right" title="Status Unavailable"></i></h2>
+        <h2 id="Natick-Title"><a class="location-item" id="Natick"><a href="natick.html">Natick</a>&nbsp;</a><i class="fa fa-circle" id="Natick-Status" data-toggle="tooltip"  data-placement="right" title="Status Unavailable"></i></h2>
         <div class="btn-group">
             <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts%2F+Sport+Karate+Academy,+124+E+Central+St,+Natick,+MA+01760" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
             <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
@@ -119,7 +130,7 @@
         <p>Located at Rocky DiRico’s Kenpo Karate, Seishin proudly brings it’s exciting programs to the Natick area. Located near the Wayland, Framingham, and Wellesley area.</p>
         <hr>
         <!--Sherborn-->
-        <h2 id="Sherborn-Title"><a class="location-item" id="Sherborn">Sherborn&nbsp;</a><i class="fa fa-circle" id="Sherborn-Status" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <h2 id="Sherborn-Title"><a class="location-item" id="Sherborn"><a href="sherborn.html">Sherborn</a>&nbsp;</a><i class="fa fa-circle" id="Sherborn-Status" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
         <div class="btn-group">
             <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+11+S+Main+St,+Sherborn,+MA+01770" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
             <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
@@ -135,7 +146,7 @@
         <p>Opened in 2007, our Sherborn location is “Taking Excellence To A New Level” conveniently near Dover, Millis, Medfield, Natick, Framingham, and Holliston. Check out photos of our Sherborn school exclusively on our facebook page!</p>
         <hr>
         <!--Wellesley-->
-        <h2 id="Wellesley-Title"><a class="location-item" id="Wellesley">Wellesley&nbsp;</a><i class="fa fa-circle" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <h2 id="Wellesley-Title"><a class="location-item" id="Wellesley"><a href="wellesley.html">Wellesley</a>&nbsp;</a><i class="fa fa-circle" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
         <div class="btn-group">
             <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Miss+Michelle\'s+Center+for+the+Performing+Arts,+159+Linden+St,+Wellesley,+MA+02482" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
             <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>
@@ -151,7 +162,7 @@
         <p>Located at Miss Michelle’s Center for the Performing Arts. Across from Roche Brothers, Starbucks, and next to Beacon Hill Athletic Club.</p>
         <hr>
         <!--Weston-->
-        <h2 id="Weston-Title"> <a class="location-item" id="Weston">Weston&nbsp;</a><i class="fa fa-circle" style="color:#6f6f6f;font-size: 15px;vertical-align: middle;" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
+        <h2 id="Weston-Title"><a class="location-item" id="Weston"><a href="weston.html">Weston</a>&nbsp;</a><i class="fa fa-circle" data-toggle="tooltip" data-placement="right" title="Status Unavailable"></i></h2>
         <div class="btn-group">
             <a href="https://maps.google.com/maps?saddr=My+Location&daddr=The+Rivers+School,+333+Winter+Street,+Weston,+MA+02493" target="_blank" role="button" class="btn btn-default btn-xs">Directions</a>
             <a href="#" role="button" class="btn btn-default btn-xs">Schedule</a>

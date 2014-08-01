@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
     <script src="js/modernizr.js"></script>
     <!--END:BEGINSCRIPTS-->
+    <link rel="stylesheet" href="css/vendor/ladda-themeless.min.css">
 </head>
 <body id="contact">
 <!--BUILD:NAVBAR-->
@@ -43,9 +44,17 @@
                     <a href="about.html" class="dropdown-toggle disabled" data-toggle="dropdown">About <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="history.html">History</a></li>
-                        <li><a href="locations.html">Locations</a></li>
                         <li><a href="staff.html">Staff</a></li>
                         <li><a href="tournaments.html">Tournaments</a></li>
+                    </ul>
+                <li class="dropdown">
+                    <a href="locations.html" class="dropdown-toggle disabled" data-toggle="dropdown">Locations <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="medway.html">Medway</a></li>
+                        <li><a href="natick.html">Natick</a></li>
+                        <li><a href="sherborn.html">Sherborn</a></li>
+                        <li><a href="wellesley.html">Wellesley</a></li>
+                        <li><a href="weston.html">Weston</a></li>
                     </ul>
                 <li id="programs-nav"><a href="programs.html">Programs</a></li>
                 <li><a href="social.html">Social</a></li>
@@ -74,7 +83,7 @@
         <li class="active">Contact Us</li>
     </ol>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" id="sidebar">
             <address>
                 <h3>Medway</h3>
                 74 Main St. Medway, MA<br>
@@ -138,26 +147,57 @@
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Rivers+School+Weston,+MA">
             </iframe>
         </div>
-        <div class="col-md-2">
-            <h2 class="" style="font-family: Lucida Grande;font-size: 16; padding-top: 10px"><b>I want to...</b></h2>
-        </div>
-        <div id="wufoo-zn5ildx0p2ft48" class="col-md-5">
-            <script type="text/javascript">var zn5ildx0p2ft48;(function(d, t) {
-                var s = d.createElement(t), options = {
-                    'userName':'kurtmarcink',
-                    'formHash':'zn5ildx0p2ft48',
-                    'autoResize':true,
-                    'height':'1114',
-                    'async':true,
-                    'host':'wufoo.com',
-                    'header':'hide',
-                    'ssl':true};
-                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-                s.onload = s.onreadystatechange = function() {
-                    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-                    try { zn5ildx0p2ft48 = new WufooForm();zn5ildx0p2ft48.initialize(options);zn5ildx0p2ft48.display(); } catch (e) {}};
-                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-            })(document, 'script');</script>
+        <div class="col-md-8" style="margin-left: 30px;" id="contact-div">
+            <h2>Contact Form</h2>
+            <script type="text/javascript">
+                var RecaptchaOptions = {
+                    theme : 'clean'
+                };
+            </script>
+            <form role="form" id="contact-form">
+                <div class="form-group">
+                    <label for="name" class="control-label">Name</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label">Email Address</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="control-label">Message</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></div>
+                        <textarea class="form-control" id="message" placeholder="Enter Message" cols="200" rows="5" style="resize:none;" required></textarea>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px">
+                <script type="text/javascript"
+                        src="http://www.google.com/recaptcha/api/challenge?k=6LcW2fcSAAAAADucciXjSQ7r_Et1etWUkH6gUGjI">
+                </script>
+                </div>
+                <noscript>
+                    <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LcW2fcSAAAAADucciXjSQ7r_Et1etWUkH6gUGjI"
+                            height="300" width="500" frameborder="0" style="margin-bottom: 15px;"></iframe><br>
+                    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                    </textarea>
+                    <input type="hidden" name="recaptcha_response_field"
+                           value="manual_challenge">
+                </noscript>
+                <button type="submit" class="btn btn-primary ladda-button" data-style="expand-left" data-size="l" id="submit"><span class="ladda-label">Submit</span></button>
+            </form>
         </div>
     </div>
     <!--BUILD:FOOTER-->
@@ -197,5 +237,67 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 <!--END:ENDSCRIPTS-->
+<script src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
+<script src="js/spin.min.js"></script>
+<script src="js/ladda.min.js"></script>
+<script>
+    $("#contact-div").stick_in_parent();
+    Ladda.bind( 'input[type=submit]' );
+</script>
+<script>
+    $(function () {
+        $('#submit').click(function(e) {
+            e.preventDefault();
+            var l = Ladda.create(this);
+            l.start();
+
+            var email = $("#email").val(); // get email field value
+            var name = $("#name").val(); // get name field value
+            var phone = $("#phone").val();
+            var message = $("#message").val(); // get message field value
+            var body =
+                    '<p>Name: ' + name + '</p>' +
+                    '<p>Phone: ' + phone + '</p>' +
+                    '<p>Email: ' + email + '</p>' + message;
+            $.ajax(
+                    {
+                        type: "POST",
+                        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                        data: {
+                            'key': '0yWpQRnDNFapqK4MXmIcSg',
+                            'message': {
+                                'from_email': email,
+                                'from_name': name,
+                                'headers': {
+                                    'Reply-To': email
+                                },
+                                'subject': 'Website Contact Form Submission',
+                                'html': body,
+                                'to': [
+                                    {
+                                        'email': 'kurt.marcink@gmail.com',
+                                        'name': 'Kurt Marcinkiewicz',
+                                        'type': 'to'
+                                    }]
+                            }
+                        }
+                    })
+                    .done(function(response) {
+                        $('#contact-form')[0].reset();
+                        alert('Your message has been sent. Thank you!'); // show success message
+                        $("#name").val(''); // reset field after successful submission
+                        $("#email").val(''); // reset field after successful submission
+                        $("#message").val(''); // reset field after successful submission
+                    })
+                    .fail(function(response) {
+                        alert('Error sending message.');
+                    })
+                    .always(function() {
+                        l.stop();
+                    });
+            return false; // prevent page refresh
+        });
+    });
+</script>
 </body>
 </html>
