@@ -19,8 +19,7 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                'build-package/js/main.js',
-                'build-package/js/plugins.js'
+                'build-package/js/main.js'
             ]
         },
         clean: ["dist"],

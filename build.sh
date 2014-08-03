@@ -1,6 +1,6 @@
 #!/bin/sh
 
-files=( "build-package/about.html" "build-package/contact.html" "build-package/history.html" "build-package/index.html" "build-package/locations.html" "build-package/programs.html" "build-package/social.html" "build-package/staff.html" "build-package/tournaments.html" )
+files=( "build-package/about.html" "build-package/contact.html" "build-package/history.html" "build-package/index.html" "build-package/locations.html" "build-package/programs.html" "build-package/social.html" "build-package/staff.html" "build-package/tournaments.html" "build-package/medway.html" "build-package/natick.html" "build-package/sherborn.html" "build-package/wellesley.html" "build-package/weston.html" )
 
 if [ ! -d "build-package" ]
 then

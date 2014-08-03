@@ -10,6 +10,7 @@
 
     <!--BUILD:BEGINSCRIPTS-->
     <!--END:BEGINSCRIPTS-->
+    <link rel="stylesheet" href="css/vendor/ladda-themeless.min.css">
 </head>
 <body id="contact">
 <!--BUILD:NAVBAR-->
@@ -26,7 +27,7 @@
         <li class="active">Contact Us</li>
     </ol>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" id="sidebar">
             <address>
                 <h3>Medway</h3>
                 74 Main St. Medway, MA<br>
@@ -90,26 +91,53 @@
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Rivers+School+Weston,+MA">
             </iframe>
         </div>
-        <div class="col-md-2">
-            <h2 class="" style="font-family: Lucida Grande;font-size: 16; padding-top: 10px"><b>I want to...</b></h2>
-        </div>
-        <div id="wufoo-zn5ildx0p2ft48" class="col-md-5">
-            <script type="text/javascript">var zn5ildx0p2ft48;(function(d, t) {
-                var s = d.createElement(t), options = {
-                    'userName':'kurtmarcink',
-                    'formHash':'zn5ildx0p2ft48',
-                    'autoResize':true,
-                    'height':'1114',
-                    'async':true,
-                    'host':'wufoo.com',
-                    'header':'hide',
-                    'ssl':true};
-                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-                s.onload = s.onreadystatechange = function() {
-                    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-                    try { zn5ildx0p2ft48 = new WufooForm();zn5ildx0p2ft48.initialize(options);zn5ildx0p2ft48.display(); } catch (e) {}};
-                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-            })(document, 'script');</script>
+        <div class="col-md-8" style="margin-left: 30px;" id="contact-div">
+            <h2>Contact Form</h2>
+            <div class="alert alert-danger alert-dismissible hidden" id="spam-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Error.</strong>&nbsp;Are you a&nbsp;<a href="http://en.wikipedia.org/wiki/Spambot" class="alert-link" target="_blank">robot</a>? If not, please submit the form again. If you still see this message,&nbsp;<a href="locations.html" class="alert-link">please contact one of our locations directly</a>.
+            </div>
+            <div class="alert alert-danger alert-dismissible hidden" id="error-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Error.</strong>&nbsp;There appears to be a problem with our server. Please submit the form again. If you still see this message,&nbsp;<a href="locations.html" class="alert-link">please contact one of our locations directly</a>.
+            </div>
+            <div class="alert alert-success alert-dismissible hidden" id="success-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <!--TODO: add open chat widget-->
+                <strong>Success!</strong>&nbsp;Thank you for taking the time to connect with us. An instructor will be contacting you soon. Stay up to date with everything Seishin by visiting our&nbsp;<a href="social.html" class="alert-link">Social Page</a>.
+            </div>
+            <form role="form" id="contact-form">
+                <input type="text" name="foo" id="foo" class="hidden" placeholder="Leave this field blank">
+                <div class="form-group">
+                    <label for="name" class="control-label">Name</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label">Email Address</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="control-label">Message</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></div>
+                        <textarea class="form-control" id="message" placeholder="Enter Message" cols="200" rows="5" style="resize:none;" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default ladda-button" data-style="expand-left" data-size="l" id="submit"><span class="ladda-label">Submit</span></button>
+            </form>
         </div>
     </div>
     <!--BUILD:FOOTER-->
@@ -117,5 +145,14 @@
 </div>
 <!--BUILD:ENDSCRIPTS-->
 <!--END:ENDSCRIPTS-->
+<script src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
+<script src="js/spin.min.js"></script>
+<script src="js/ladda.min.js"></script>
+<script>
+//    TODO: fix sticking problem
+    $("#contact-div").stick_in_parent();
+    Ladda.bind( 'input[type=submit]' );
+</script>
+<script src="js/sendContact.js"></script>
 </body>
 </html>
