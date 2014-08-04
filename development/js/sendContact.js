@@ -35,19 +35,19 @@ $(function () {
                                     {
                                         'email': 'kurt@seishinsportkarate.com',
                                         'name': 'Kurt Marcinkiewicz'
+                                    },
+                                    {
+                                        'email': 'eric@seishinsportkarate.com',
+                                        'name': 'Eric Hung'
+                                    },
+                                    {
+                                        'email': 'steven@seishinsportkarate.com',
+                                        'name': 'Steven Hung'
+                                    },
+                                    {
+                                        'email': 'tim@seishinsportkarate.com',
+                                        'name': 'Tim Pettepit'
                                     }
-//                                    {
-//                                        'email': 'eric@seishinsportkarate.com',
-//                                        'name': 'Eric Hung'
-//                                    },
-//                                    {
-//                                        'email': 'steven@seishinsportkarate.com',
-//                                        'name': 'Steven Hung'
-//                                    },
-//                                    {
-//                                        'email': 'tim@seishinsportkarate.com',
-//                                        'name': 'Tim Pettepit'
-//                                    }
                                 ],
                                 "global_merge_vars": [
                                     {
