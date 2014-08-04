@@ -1,3 +1,24 @@
+(function () {
+    webshim.setOptions('forms', {
+        lazyCustomMessages: true,
+        iVal: {
+            sel: '.ws-validate',
+            handleBubble: 'hide', // hide error bubble
+
+            //add bootstrap specific classes
+            errorMessageClass: 'help-block',
+            successWrapperClass: 'has-success',
+            errorWrapperClass: 'has-error',
+
+            //add config to find right wrapper
+            fieldWrapper: '.form-group'
+        }
+    });
+
+    //load forms polyfill + iVal feature
+    webshim.polyfill('forms');
+})();
+
 $(function () {
     $('#submit').click(function(e) {
         var $contactForm = $('#contact-form'),
@@ -35,19 +56,19 @@ $(function () {
                                     {
                                         'email': 'kurt@seishinsportkarate.com',
                                         'name': 'Kurt Marcinkiewicz'
+                                    },
+                                    {
+                                        'email': 'eric@seishinsportkarate.com',
+                                        'name': 'Eric Hung'
+                                    },
+                                    {
+                                        'email': 'steven@seishinsportkarate.com',
+                                        'name': 'Steven Hung'
+                                    },
+                                    {
+                                        'email': 'tim@seishinsportkarate.com',
+                                        'name': 'Tim Pettepit'
                                     }
-//                                    {
-//                                        'email': 'eric@seishinsportkarate.com',
-//                                        'name': 'Eric Hung'
-//                                    },
-//                                    {
-//                                        'email': 'steven@seishinsportkarate.com',
-//                                        'name': 'Steven Hung'
-//                                    },
-//                                    {
-//                                        'email': 'tim@seishinsportkarate.com',
-//                                        'name': 'Tim Pettepit'
-//                                    }
                                 ],
                                 "global_merge_vars": [
                                     {

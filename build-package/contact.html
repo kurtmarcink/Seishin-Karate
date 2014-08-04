@@ -172,7 +172,7 @@
                 <!--TODO: add open chat widget-->
                 <strong>Success!</strong>&nbsp;Thank you for taking the time to connect with us. An instructor will be contacting you soon. Stay up to date with everything Seishin by visiting our&nbsp;<a href="social.html" class="alert-link">Social Page</a>.
             </div>
-            <form role="form" id="contact-form">
+            <form role="form" id="contact-form" class="ws-validate">
                 <input type="text" name="foo" id="foo" class="hidden" placeholder="Leave this field blank">
                 <div class="form-group">
                     <label for="name" class="control-label">Name</label>
@@ -188,6 +188,7 @@
                         <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
                     </div>
                 </div>
+                <div id="hint" style="margin-bottom: 10px;"></div>
                 <div class="form-group">
                     <label for="phone">Phone</label>
                     <div class="input-group">
@@ -234,14 +235,53 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 <!--END:ENDSCRIPTS-->
+<script src="js/mailcheck.min.js"></script>
+<script type="text/javascript">
+    var $email = $('#email');
+    var $hint = $("#hint");
+
+    $email.on('blur',function() {
+        $hint.css('display', 'none').empty();
+        $(this).mailcheck({
+            suggested: function(element, suggestion) {
+                if(!$hint.html()) {
+                    // First error - fill in/show entire hint element
+                    var suggestion = "Did you mean <a href='#' class='domain'><span class='suggestion'>" +
+                            "<span class='address'><b>" + suggestion.address + "</span>"
+                            + "@" + suggestion.domain +
+                            "</a></b></span>?";
+
+                    $hint.html(suggestion).fadeIn(150);
+                } else {
+                    // Subsequent errors
+                    $(".address").html(suggestion.address);
+                    $(".domain").html(suggestion.domain);
+                }
+            }
+        });
+    });
+
+    $hint.on('click', '.domain', function() {
+        // On click, fill in the field with the suggestion and remove the hint
+        $email.val($(".suggestion").text());
+        $hint.fadeOut(200, function() {
+            $(this).empty();
+        });
+        return false;
+    });
+</script>
 <script src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
 <script src="js/spin.min.js"></script>
 <script src="js/ladda.min.js"></script>
 <script>
 //    TODO: fix sticking problem
-    $("#contact-div").stick_in_parent();
-    Ladda.bind( 'input[type=submit]' );
+$("#contact-div").stick_in_parent();
+Ladda.bind( 'input[type=submit]' );
+Modernizr.load({
+    test: Modernizr.formvalidation,
+    yep : 'js/sendContact.js',
+    nope: ['js/polyfiller.js', 'js/sendContactPolyfill.js']
+});
 </script>
-<script src="js/sendContact.js"></script>
 </body>
 </html>
