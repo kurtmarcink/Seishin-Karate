@@ -99,7 +99,7 @@ function initialize() {
                             html = '<b>Seishin Medway</b>&nbsp;&nbsp;' + getClosed(medwayJson) + '<br>' +
                                 '<a href="tel:508-533-1501">(508) 533-1501</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
-                                '<a href="https://plus.google.com/107453042588075303931/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
+                                '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademyMedway/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
                                 '<a href="#Medway"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(medwayJson);
                         }
@@ -107,7 +107,7 @@ function initialize() {
                             html = '<b>Seishin Sherborn</b>&nbsp;&nbsp;' + getClosed(sherbornJson)  + '<br>' +
                                 '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+11+S+Main+St,+Sherborn,+MA+01770" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
-                                '<a href="https://plus.google.com/115315292366238841081/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
+                                '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademySherborn/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
                                 '<a href="#Sherborn"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(sherbornJson);
                         }
@@ -115,7 +115,7 @@ function initialize() {
                             html = '<b>Seishin Natick</b>&nbsp;&nbsp;' + getClosed(natickJson) + '<br>' +
                                 '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts%2F+Sport+Karate+Academy,+124+E+Central+St,+Natick,+MA+01760" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
-                                '<a href="https://plus.google.com/100706843756981282186/about?hl=en&review=1" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
+                                '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademyNatick/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
                                 '<a href="#Natick"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(natickJson);
                         }
