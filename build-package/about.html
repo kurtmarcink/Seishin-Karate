@@ -81,19 +81,47 @@
 </div>
 <!--END:NAVBAR-->
 <!--TODO: Add images-->
-<main class="page-header" id="content" role="main">
-    <div class="container">
-        <h1>Our Story</h1>
+<style>
+    .jumbotron p {
+        font-size: 30px;
+    }
+    .jumbotron h1 {
+        margin-bottom: 50px;
+    }
+    .jumbotron .container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+</style>
+<div class="jumbotron" id='heading' style="color: white;background-color: red">
+    <div class="container ">
+        <h1>Quality Instruction For the Whole Family</h1>
+        <p style="text-align: center">Seishin has been an integral part of the Greater Boston community since 2000. We help students of all ages become great athletes, and better people.</p>
     </div>
-</main>
-<div class="container">
-    <ol class="breadcrumb">
-        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
-        <li class="active">About</li>
-    </ol>
-    <p class="text-justify">Seishin in the Japanese language means true heart, true spirit, true being. At Seishin Martial Arts / Sport Karate Academy we take this as our basic philosophy in developing each student into fantastic individuals inside and outside the dojo. In doing so, students learn the importance of effort, etiquette, character, sincerity, and self-control. By using the physical and mental aspects of the Martial Arts as a guide, we aim to make a lasting impact on both students and the community as a whole.</p>
-    <p class="text-justify">Seishin Martial Arts offers instruction from a staff including both National and World Champions from the karate competition circuits. Our highly skilled instructors are well-qualified in training students of all ages, ranks, and abilities. We are currently producing a new generation of champions, as well as students who are champions in their own right. Our staff is trained to work with high-caliber individuals who take a natural affinity for success in the sport, as well as students who need just a little extra attention to reach their goals. Our instructors have an extensive background working with students with ADD, ADHD, Cerebral Palsy, Learning Delay and Dyslexia, as well as those with particular physical limitations. Our staff also offers specialized instruction on an individual basis for students interested in private training classes and personal training programs.Seishin has produced more than a dozen state champions, fourteen national champions, and four world champions, eleven of whom have been members of the elite ”Team Straight Up” International Karate Team. Since 2002, Seishin has won at least one National Championship every year from the KRANE sport karate circuit. Seishin students and instructors have been featured in documentaries, commercials, music videos, and on ESPN.</p>
-    <p class="text-justify">Just about anyone can benefit from the Martial Arts: Men, Women, and Children from ages 4 to adult. In class, students work with others of similar skill level and a comparable level of experience. Instructors provide personal attention to all students so that each individual can develop his or her karate skills at a comfortable pace. For more information or to inquire about one of our programs, please contact the Academy nearest you!</p>
+</div>
+<div class="img-holder" data-image="images/seishin_dedication.jpg"></div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Dedication</h1>
+        <p>At Seishin, we understand the value of hard work. Our background is in Kenpo, a practical martial art that enhances power and coordination. We are also one of the leading training centers in the nation for Sport Karate, a modern martial art that sees tremendous popularity in Hollywood. Our training sessions enforce strength, flexibility, and stamina through high-energy cardio, calisthenics, and plyometrics.</p>
+    </div>
+</div>
+<div class="img-holder" data-image="images/seishin_community.jpg"></div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Community</h1>
+        <p>Seishin is not just a karate school, it's a way to meet great people and make friends for life. Students and parents enjoy our many events throughout the year, including movie nights, holiday parties, tournaments, demonstrations, and charity events.</p>
+        <p>Students at Seishin love giving back. We have strong ties with local non-profit organizations, including The Ryan Harvey Foundation, Medway Public Library, and Pine Hill Community School Association.</p>
+    </div>
+</div>
+<div class="img-holder" data-image="images/seishin_success.jpg"></div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Success</h1>
+        <p>Our success speaks for itself. Seishin has produced nearly 20 State Champions, 14 National Champions, and Four World Champions. Eleven members of Seishin have gone on to join the elite "Team Straight Up", a world-renowned professional competition team. Students have been featured in documentaries, music videos, commercials, and on ESPN.</p>
+        <p>Our instructors also has extensive experience teaching students with ADD, ADHD, Dyslexia, Learning Delay, Autism, Down Syndrome, and Cerebral Palsy, as well as those with physical limitations</p>
+    </div>
+</div>
 <!--BUILD:FOOTER-->
 <div>
 <hr>
@@ -122,5 +150,12 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 <!--END:ENDSCRIPTS-->
+<script src="js/imageScroll.min.js"></script>
+<script>
+    $('.img-holder').imageScroll();
+    $(function () {
+        $('.img-holder').imageScroll();
+    })
+</script>
 </body>
 </html>

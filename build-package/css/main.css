@@ -18,6 +18,13 @@ ul.nav > .social-li {
 .jumbotron {
   margin-bottom: 0;
 }
+.jumbotron#heading {
+  margin-bottom: 0;
+  background-color: #ed4b43;
+  background-image: -webkit-linear-gradient(top, #ed4b43, #a1160f);
+  background-image: linear-gradient(to bottom, #ed4b43, #a1160f);
+  background-repeat: repeat-x;
+}
 /*customize footer link*/
 a {
   color: #333333;
