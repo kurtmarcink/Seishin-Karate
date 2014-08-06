@@ -33,11 +33,7 @@ ul.nav > .social-li {
 .navbar-right {
   padding-top: 20;
 }
-.jumbotron {
-  margin-bottom: 0;
-}
 .jumbotron#heading {
-  margin-bottom: 0;
   background-color: #ed4b43;
   background-image: -webkit-linear-gradient(top, #ed4b43, #a1160f);
   background-image: linear-gradient(to bottom, #ed4b43, #a1160f);
@@ -50,6 +46,14 @@ a {
 a:hover {
   text-decoration: none;
   color: #ed4b43;
+}
+.jumbo-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-bottom: 100px;
 }
 .breadcrumb a {
   color: #777777;
@@ -107,4 +111,41 @@ h1 {
   text-align: center;
   color: white;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+}
+.jumbo-arrow {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+.about-jumbo {
+  margin-bottom: 0;
+  position: relative;
+  height: 100vh;
+}
+.about-jumbo p {
+  font-size: 30px;
+}
+.about-jumbo h1 {
+  margin-bottom: 50px;
+}
+.about-jumbo .glyphicon-chevron-down,
+.about-jumbo .glyphicon-chevron-up {
+  color: #333333;
+  font-size: 30px;
+}
+.about-jumbo .glyphicon-chevron-down:hover,
+.about-jumbo .glyphicon-chevron-up:hover {
+  color: #555555;
+}
+.about-jumbo .glyphicon-chevron-down#about-heading-arrow,
+.about-jumbo .glyphicon-chevron-up#about-heading-arrow {
+  color: white;
+}
+.about-jumbo .glyphicon-chevron-down#about-heading-arrow:hover,
+.about-jumbo .glyphicon-chevron-up#about-heading-arrow:hover {
+  color: #c2c2c2;
 }

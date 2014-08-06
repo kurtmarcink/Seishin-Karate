@@ -23,11 +23,7 @@ ul.nav > .social-li {
 .navbar-right {
   padding-top: 20;
 }
-.jumbotron {
-  margin-bottom: 0;
-}
 .jumbotron#heading {
-  margin-bottom:0;
   background-color: @brand-primary;
   background-image: linear-gradient(to bottom, @brand-primary, darken(@brand-primary, 25%));
   background-repeat: repeat-x;
@@ -39,6 +35,13 @@ a {
     text-decoration: none;
     color: @brand-primary;
   }
+}
+
+.jumbo-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 100px;
 }
 
 .breadcrumb {
@@ -112,5 +115,38 @@ h1 {
   color: white;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.70);
 
+}
+.jumbo-arrow {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+}
+.about-jumbo {
+  margin-bottom: 0;
+  position:relative;
+  height:100vh;
+  p {
+    font-size: 30px;
+  }
+  h1 {
+    margin-bottom: 50px;
+  }
+  .glyphicon-chevron-down, .glyphicon-chevron-up {
+    color:@text-color;
+    font-size: 30px;
+    &:hover {
+      color: @gray;
+    }
+    &#about-heading-arrow {
+      color: white;
+      &:hover {
+        color: @gray-lightish;
+      }
+    }
+  }
 }
 
