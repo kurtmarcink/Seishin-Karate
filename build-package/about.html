@@ -14,7 +14,7 @@
 
     <!--BUILD:BEGINSCRIPTS-->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor/social.min.css">
     <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
@@ -37,55 +37,85 @@
 <!--[if lte IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Seishin</a>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="about.html" class="dropdown-toggle disabled" data-toggle="dropdown">About <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="history.html">History</a></li>
-                        <li><a href="staff.html">Staff</a></li>
-                        <li><a href="tournaments.html">Tournaments</a></li>
-                    </ul>
-                <li class="dropdown">
-                    <a href="locations.html" class="dropdown-toggle disabled" data-toggle="dropdown">Locations <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="medway.html">Medway</a></li>
-                        <li><a href="natick.html">Natick</a></li>
-                        <li><a href="sherborn.html">Sherborn</a></li>
-                        <li><a href="wellesley.html">Wellesley</a></li>
-                        <li><a href="weston.html">Weston</a></li>
-                    </ul>
-                <li id="programs-nav"><a href="programs.html">Programs</a></li>
-                <li><a href="social.html">Social</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+<style>
+    .center.navbar .nav,
+    .center.navbar .nav > li {
+        float:none;
+        display:inline-block;
+        *display:inline; /* ie7 fix */
+        *zoom:1; /* hasLayout ie7 trigger */
+        vertical-align: top;
+    }
+
+    .center .navbar-inner {
+        text-align:center;
+    }
+    .nav-icon {
+        font-size: 30px;
+    }
+</style>
+<div class="navigation" style="border-bottom: 1px solid #C7C7C7;">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Seishin</a>
+            </div>
+            <div class="navbar-collapse collapse center" id="navbar">
+                <ul class="nav navbar-nav center">
+                    <li id="about-nav-click"><a href="#">ABOUT <i class="fa fa-angle-down" id="about-arrow"></i></a></li>
+                    <li id="locations-nav-click"><a href="#">LOCATIONS <i class="fa fa-angle-down" id="locations-arrow"></i></a></li>
+                    <li id="programs-nav"><a href="programs.html">PROGRAMS</a></li>
+                    <li><a href="social.html">SOCIAL</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="social-li"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook"></a></li>
-                <li class="social-li"><a href="http://instagram.com/seishin_karate" target="_blank" title="instagram" class="social instagram"></a></li>
-                <li class="social-li"><a href="http://twitter.com/seishin_karate" target="_blank" title="twitter" class="social twitter"></a></li>
-                <li class="social-li"><a href="http://youtube.com/seishinkarate" target="_blank" title="youtube" class="social youtube"></a></li>
-                <li class="social-li"><a href="http://www.yelp.com/biz/seishin-martial-arts-sport-karate-academy-medway" title="yelp" target="_blank" class="social yelp"></a></li>
-            </ul>
-        </div><!--/.navbar-collapse -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="social-li"><a href="http://www.facebook.com/seishinmaska" target="_blank" title="facebook" class="social facebook"></a></li>
+                    <li class="social-li"><a href="http://instagram.com/seishin_karate" target="_blank" title="instagram" class="social instagram"></a></li>
+                    <li class="social-li"><a href="http://twitter.com/seishin_karate" target="_blank" title="twitter" class="social twitter"></a></li>
+                    <li class="social-li"><a href="http://youtube.com/seishinkarate" target="_blank" title="youtube" class="social youtube"></a></li>
+                    <li class="social-li"><a href="http://www.yelp.com/biz/seishin-martial-arts-sport-karate-academy-medway" title="yelp" target="_blank" class="social yelp"></a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
     </div>
-</div>
-<!--END:NAVBAR-->
+    <div class="navbar navbar-inverse center" id="about-nav" role="navigation" style="display:none;">
+        <div class="navbar-inner">
+            <div class="navbar-collapse collapse" id="navbar" style="vertical-align: bottom">
+                <ul class="nav navbar-nav" style="vertical-align: bottom">
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="history.html"><span class="nav-icon" style="font-size: 40px;">H</span><br>HISTORY</a></li>
+                    <li class="sec-nav" style="margin-left:36px;margin-right:36px"><a href="staff.html"><span class="glyphicon glyphicon-user nav-icon" style="font-size: 31px"></span><br>STAFF</a></li>
+                    <li class="sec-nav" style="margin-left:36px;margin-right:36px"><a href="tournaments.html"><i class="fa fa-trophy nav-icon" style="font-size: 36px"></i><br>TOURNAMENTS</a></li>
+                </ul>
+
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+    <div class="navbar navbar-inverse center" id="locations-nav" role="navigation" style="display:none">
+        <div class="navbar-inner">
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="sec-nav" style="margin-left:36px;margin-right:36px"><a href="locations.html"><span class="glyphicon glyphicon-map-marker" style="font-size: 31px"></span><br>MAP</a></li>
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="medway.html"><span class="nav-icon" style="font-size: 40px;">M</span><br>MEDWAY</a></li>
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="natick.html"><span class="nav-icon" style="font-size: 40px;">N</span><br>NATICK</a></li>
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="sherborn.html"><span class="nav-icon" style="font-size: 40px;">S</span><br>SHERBORN</a></li>
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="wellesley.html"><span class="nav-icon" style="font-size: 40px;">WL</span><br>WELLESLEY</a></li>
+                    <li class="sec-nav" style="padding-top: 8px;margin-left:36px;margin-right:36px"><a href="weston.html"><span class="nav-icon" style="font-size: 40px;">WS</span><br>WESTON</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+</div><!--END:NAVBAR-->
 <!--TODO: Add images-->
 <style>
 </style>
 <div id="about-wrapper">
-    <div class="jumbotron about-jumbo" id='heading' style="color: white;background-color: red;">
+    <div class="jumbotron about-jumbo" id='heading'>
         <div class="jumbo-container">
             <h1>Quality Instruction For the Whole Family</h1>
             <p style="text-align: center">Seishin has been an integral part of the Greater Boston community since 2000. We help students of all ages become great athletes, and better people.</p>
@@ -119,23 +149,121 @@
             <p>Our success speaks for itself. Seishin has produced nearly 20 State Champions, 14 National Champions, and Four World Champions. Eleven members of Seishin have gone on to join the elite "Team Straight Up", a world-renowned professional competition team. Students have been featured in documentaries, music videos, commercials, and on ESPN.</p>
             <p>Our instructors also has extensive experience teaching students with ADD, ADHD, Dyslexia, Learning Delay, Autism, Down Syndrome, and Cerebral Palsy, as well as those with physical limitations</p>
         </div>
-        <div class="jumbo-arrow"><a data-scroll href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a></div>
+        <div class="jumbo-arrow"><a data-scroll href="#resources"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
     </div>
-</div>
-<!--BUILD:FOOTER-->
-<div>
-<hr>
-<footer>
-    <p>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> <a class="no-link-decor" href="about.html">&nbsp;Seishin Martial Arts / Sport Karate Academy</a></p>
-</footer>
-</div>
-<!--END:FOOTER-->
+    <span id="resources"></span>
+    <div class="jumbotron about-jumbo" id="resources-jumbo">
+        <div class="jumbo-container">
+            <h1>Resources</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul><p>Learn more about our <a href="locations.html"><b>locations</b></a></p></ul>
+                    <ul><p>Check out our elite <a href="programs.html"><b>programs</b></a></p></ul>
+                    <ul><p>Stay up-to-date on our <a href="social.html"><b>social page</b></a></p></ul>
+                </div>
+                <div class="col-md-6">
+                    <ul><p>Learn about the <a href="http://breakingmuscle.com/family-kids/7-reasons-why-your-child-should-practice-martial-arts" target="_blank"><b>benefits of the martial arts</b></a></p></ul>
+                    <ul><p>Find out about <a href="http://www.sportmartialarts.com/" target="_blank"><b>Sport Karate</b></a></p></ul>
+                    <ul><p><a href="contact.html"><b>Contact us</b></a> to get started today!</p></ul>
+                </div>
+            </div>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#top"><span class="glyphicon glyphicon-chevron-up" id="about-resources-arrow"></span></a></div>
+    </div>
+    <footer>
+        <p>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> <a class="no-link-decor" href="about.html">&nbsp;Seishin Martial Arts / Sport Karate Academy</a></p>
+    </footer>
 </div> <!-- /container -->
 <!--BUILD:ENDSCRIPTS-->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+    var aboutAngle = 180,
+        locationsAngle = 180;
+
+    $( '#about-nav-click' ).click(function () {
+        if ( $( "#locations-nav" ).is( ":hidden" ) && $( '#about-nav' ).is( ":hidden" )) {
+            $('#about-arrow').css ({
+                '-webkit-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-moz-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-o-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-ms-transform': 'rotate(' + aboutAngle + 'deg)'
+            });
+            aboutAngle+=180;
+            $( '#about-nav' ).slideDown( 300 );
+        }
+        else if ($( "#locations-nav" ).is( ":visible" ) && $( '#about-nav' ).is( ":hidden" )) {
+            $('#about-arrow').css ({
+                '-webkit-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-moz-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-o-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-ms-transform': 'rotate(' + aboutAngle + 'deg)'
+            });
+            aboutAngle+=180;
+            $('#locations-arrow').css ({
+                '-webkit-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-moz-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-o-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-ms-transform': 'rotate(' + locationsAngle + 'deg)'
+            });
+            locationsAngle+=180;
+            $( "#locations-nav" ).slideUp( 'fast' );
+            $( '#about-nav' ).slideDown( 300 );
+        }
+        else {
+            $('#about-arrow').css ({
+                '-webkit-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-moz-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-o-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-ms-transform': 'rotate(' + aboutAngle + 'deg)'
+            });
+            aboutAngle+=180;
+            $( '#about-nav' ).slideUp( 300 );
+        }
+    });
+    $( '#locations-nav-click' ).click(function () {
+        if ( $( "#about-nav" ).is( ":hidden" ) && $( '#locations-nav' ).is( ":hidden" )) {
+            $('#locations-arrow').css ({
+                '-webkit-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-moz-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-o-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-ms-transform': 'rotate(' + locationsAngle + 'deg)'
+            });
+            locationsAngle+=180;
+            $( '#locations-nav' ).slideDown( 300 );
+        }
+        else if ($( "#about-nav" ).is( ":visible" ) && $( '#locations-nav' ).is( ":hidden" )) {
+            $('#locations-arrow').css ({
+                '-webkit-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-moz-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-o-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-ms-transform': 'rotate(' + locationsAngle + 'deg)'
+            });
+            locationsAngle+=180;
+            $('#about-arrow').css ({
+                '-webkit-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-moz-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-o-transform': 'rotate(' + aboutAngle + 'deg)',
+                '-ms-transform': 'rotate(' + aboutAngle + 'deg)'
+            });
+            aboutAngle+=180;
+            $( "#about-nav" ).slideUp( 'fast' );
+            $( '#locations-nav' ).slideDown( 300 );
+        }
+        else {
+            $('#locations-arrow').css ({
+                '-webkit-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-moz-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-o-transform': 'rotate(' + locationsAngle + 'deg)',
+                '-ms-transform': 'rotate(' + locationsAngle + 'deg)'
+            });
+            locationsAngle+=180;
+            $( '#locations-nav' ).slideUp( 300 );
+        }
+    });
+</script>
 
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
@@ -156,11 +284,10 @@
     smoothScroll.init({
         speed: 900, // Integer. How fast to complete the scroll in milliseconds
         easing: 'easeInQuad', // Easing pattern to use
-        updateURL: false, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+        updateURL: false // Boolean. Whether or not to update the URL with the anchor hash on scroll
     });
-</script>
-<script>
     var touch = Modernizr.touch;
+    console.log("Modernizr" + Modernizr.touch);
     $('.img-holder').imageScroll({
         extraHeight: 500,
         imageAttribute: (touch === true) ? 'image-mobile' : 'image',

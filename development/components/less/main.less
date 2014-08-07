@@ -23,10 +23,22 @@ ul.nav > .social-li {
 .navbar-right {
   padding-top: 20;
 }
-.jumbotron#heading {
-  background-color: @brand-primary;
-  background-image: linear-gradient(to bottom, @brand-primary, darken(@brand-primary, 25%));
-  background-repeat: repeat-x;
+.jumbotron {
+  &#heading {
+    background: darken(@brand-primary, 25%) linear-gradient(to bottom, @brand-primary, darken(@brand-primary, 25%)) repeat-x;
+    color: white;
+  }
+  &#resources-jumbo {
+    background: @gray linear-gradient(to bottom, lighten(@gray, 10%), @gray) repeat-x;
+    color: white;
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+        color: @brand-primary;
+      }
+    }
+  }
 }
 /*customize footer link*/
 a {
@@ -141,7 +153,7 @@ h1 {
     &:hover {
       color: @gray;
     }
-    &#about-heading-arrow {
+    &#about-heading-arrow, &#about-resources-arrow {
       color: white;
       &:hover {
         color: @gray-lightish;
@@ -149,4 +161,5 @@ h1 {
     }
   }
 }
+
 

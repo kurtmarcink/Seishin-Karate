@@ -34,10 +34,21 @@ ul.nav > .social-li {
   padding-top: 20;
 }
 .jumbotron#heading {
-  background-color: #ed4b43;
-  background-image: -webkit-linear-gradient(top, #ed4b43, #a1160f);
-  background-image: linear-gradient(to bottom, #ed4b43, #a1160f);
-  background-repeat: repeat-x;
+  background: #a1160f -webkit-linear-gradient(top, #ed4b43, #a1160f) repeat-x;
+  background: #a1160f linear-gradient(to bottom, #ed4b43, #a1160f) repeat-x;
+  color: white;
+}
+.jumbotron#resources-jumbo {
+  background: #555555 -webkit-linear-gradient(top, #6f6f6f, #555555) repeat-x;
+  background: #555555 linear-gradient(to bottom, #6f6f6f, #555555) repeat-x;
+  color: white;
+}
+.jumbotron#resources-jumbo a {
+  color: white;
+}
+.jumbotron#resources-jumbo a:hover {
+  text-decoration: none;
+  color: #ed4b43;
 }
 /*customize footer link*/
 a {
@@ -142,10 +153,14 @@ h1 {
   color: #555555;
 }
 .about-jumbo .glyphicon-chevron-down#about-heading-arrow,
-.about-jumbo .glyphicon-chevron-up#about-heading-arrow {
+.about-jumbo .glyphicon-chevron-up#about-heading-arrow,
+.about-jumbo .glyphicon-chevron-down#about-resources-arrow,
+.about-jumbo .glyphicon-chevron-up#about-resources-arrow {
   color: white;
 }
 .about-jumbo .glyphicon-chevron-down#about-heading-arrow:hover,
-.about-jumbo .glyphicon-chevron-up#about-heading-arrow:hover {
+.about-jumbo .glyphicon-chevron-up#about-heading-arrow:hover,
+.about-jumbo .glyphicon-chevron-down#about-resources-arrow:hover,
+.about-jumbo .glyphicon-chevron-up#about-resources-arrow:hover {
   color: #c2c2c2;
 }
