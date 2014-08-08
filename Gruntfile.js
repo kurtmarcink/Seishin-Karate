@@ -46,9 +46,6 @@ module.exports = function(grunt) {
             }
         },
         autoprefixer: {
-            options: {
-                browsers: ['last 3 versions']
-            },
             dist: {
                 files: {
                     'build-package/css/main.css': 'build-package/css/main.css'
@@ -166,7 +163,7 @@ module.exports = function(grunt) {
                         dest: '.',
                         rel: 'dist',
                         options: {
-                            gzip: true,
+                            gzip: false,
                             gzipExclude: ['.jpg', '.jpeg', '.png'],
                             verify: true
                         }
@@ -184,7 +181,6 @@ module.exports = function(grunt) {
     grunt.registerTask('css', [
         'less',
         'autoprefixer',
-        'csslint:lax',
         'cssmin',
         'copy:css'
     ]);
