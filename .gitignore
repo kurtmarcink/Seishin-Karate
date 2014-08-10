@@ -1,12 +1,4 @@
 .idea/
-*.ipr
-*.iml
-*.iws
-out/
-.idea_modules/
-atlassian-ide-plugin.xml
-com_crashlytics_export_strings.xml
-config.codekit
 node_modules/
 aws-credentials.json
 dist/
