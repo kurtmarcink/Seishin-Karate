@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--BUILD:MODERNIZR-->
+@@include('../snippets/modernizrCheck.html')
+<!--END:MODERNIZR-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Wellesley - Seishin Martial Arts / Sport Karate Academy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--BUILD:BEGINSCRIPTS-->
+    @@include('../snippets/beginScripts.html')
+    <!--END:BEGINSCRIPTS-->
+    <style>
+        h2 > .fa-circle {
+            color:#6f6f6f;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .tooltip {
+            position: fixed;
+        }
+    </style>
+</head>
+<body id="wellesley">
+<!--BUILD:NAVBAR-->
+@@include('../snippets/navbar.html')
+<!--END:NAVBAR-->
+<main class="page-header" id="content" role="main">
+    <div class="container">
+        <h1>Wellesley</h1>
+    </div>
+</main>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li class="active">Wellesley</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Wellesley</h2>
+            <b>Chief Instructor:&nbsp;</b>Steven Hung<br>
+            <address>
+                <b>Address:&nbsp;</b>159 Linden St. Wellesley, MA 02482<br>
+                <b>Phone:&nbsp;</b><a href="tel:508-319-1775">(508) 319-1775</a><br>
+            </address>
+            <p>Located at Miss Michelle’s Center for the Performing Arts. Across from Roche Brothers, Starbucks, and next to Beacon Hill Athletic Club.</p>
+        </div>
+        <div class="col-md-6">
+            <iframe
+                    width="450"
+                    height="400"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Miss+Michelle’s+Center+for+the+Performing+Arts+Wellesley,+MA">
+            </iframe>
+        </div>
+    </div>
+    <!--BUILD:FOOTER-->
+    @@include('../snippets/footer.html')
+    <!--END:FOOTER-->
+</div>
+<!-- /container -->
+<!--BUILD:ENDSCRIPTS-->
+@@include('../snippets/endScripts.html')
+<!--END:ENDSCRIPTS-->
+</body>
+</html>

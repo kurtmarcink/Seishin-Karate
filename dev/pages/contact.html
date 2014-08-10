@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--BUILD:MODERNIZR-->
+@@include('../snippets/modernizrCheck.html')
+<!--END:MODERNIZR-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Contact Us - Seishin Martial Arts / Sport Karate Academy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--BUILD:BEGINSCRIPTS-->
+    @@include('../snippets/beginScripts.html')
+    <!--END:BEGINSCRIPTS-->
+    <link rel="stylesheet" href="css/vendor/ladda-themeless.min.css">
+</head>
+<body id="contact">
+<!--BUILD:NAVBAR-->
+@@include('../snippets/navbar.html')
+<!--END:NAVBAR-->
+<main class="page-header" id="content" role="main">
+    <div class="container">
+        <h1>Contact Us</h1>
+    </div>
+</main>
+<div class="container">
+    <!--TODO: add static images and AJAX loaders while maps load-->
+    <ol class="breadcrumb">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="active">Contact Us</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-3" id="sidebar">
+            <address>
+                <h3>Medway</h3>
+                74 Main St. Medway, MA<br>
+                (508) 533-1501
+            </address>
+            <iframe
+                    width="280"
+                    height="280"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Seishin+Karate+Medway,+MA">
+            </iframe>
+            <hr class="contact-sidebar">
+            <address>
+                <h3>Natick</h3>
+                Rocky Dirico School of Kenpo<br>
+                124 East Central St. Natick, MA<br>
+                (508) 433-0901
+            </address>
+            <iframe
+                    width="280"
+                    height="280"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Seishin+Karate+Natick,+MA">
+            </iframe>
+            <hr class="contact-sidebar">
+            <address>
+                <h3>Sherborn</h3>
+                11 South Main St. Sherborn, MA<br>
+                (508) 433-0901
+            </address>
+            <iframe
+                    width="280"
+                    height="280"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Seishin+Martial+Arts+%2F+Sport+Karate+Academy+11+S+Main+St+Sherborn,+MA+01770">
+            </iframe>
+            <hr class="contact-sidebar">
+            <address>
+                <h3>Wellesley</h3>
+                Miss Michelle's Center for the Perf. Arts<br>
+                159 Linden St. Wellesley, MA<br>
+                (508) 319-1775
+            </address>
+            <iframe
+                    width="280"
+                    height="280"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Miss+Michelle’s+Center+for+the+Performing+Arts+Wellesley,+MA">
+            </iframe>
+            <hr class="contact-sidebar">
+            <address>
+                <h3>Weston</h3>
+                The Rivers School<br>
+                333 Winter St. Weston, MA<br>
+                (508) 319-1775
+            </address>
+            <iframe
+                    width="280"
+                    height="280"
+                    frameborder="0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Rivers+School+Weston,+MA">
+            </iframe>
+        </div>
+        <div class="col-md-8" style="margin-left: 30px;" id="contact-div">
+            <h2>Contact Form</h2>
+            <div class="alert alert-danger alert-dismissible hidden" id="spam-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Error.</strong>&nbsp;Are you a&nbsp;<a href="http://en.wikipedia.org/wiki/Spambot" class="alert-link" target="_blank">robot</a>? If not, please submit the form again. If you still see this message,&nbsp;<a href="locations.html" class="alert-link">please contact one of our locations directly</a>.
+            </div>
+            <div class="alert alert-danger alert-dismissible hidden" id="error-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Error.</strong>&nbsp;There appears to be a problem with our server. Please submit the form again. If you still see this message,&nbsp;<a href="locations.html" class="alert-link">please contact one of our locations directly</a>.
+            </div>
+            <div class="alert alert-success alert-dismissible hidden" id="success-alert" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <!--TODO: add open chat widget-->
+                <strong>Success!</strong>&nbsp;Thank you for taking the time to connect with us. An instructor will be contacting you soon. Stay up to date with everything Seishin by visiting our&nbsp;<a href="social.html" class="alert-link">Social Page</a>.
+            </div>
+            <form role="form" id="contact-form" class="ws-validate">
+                <input type="text" name="foo" id="foo" class="hidden" placeholder="Leave this field blank">
+                <div class="form-group">
+                    <label for="name" class="control-label">Name</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label">Email Address</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div id="hint" style="margin-bottom: 10px;"></div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
+                        <input type="tel" class="form-control" data-mask="(999) 999-9999" id="phone" placeholder="Enter Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="control-label">Message</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-edit"></span></div>
+                        <textarea class="form-control" id="message" placeholder="Enter Message" cols="200" rows="5" style="resize:none;" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default ladda-button" data-style="expand-left" data-size="l" id="submit"><span class="ladda-label">Submit</span></button>
+            </form>
+        </div>
+    </div>
+    <!--BUILD:FOOTER-->
+    @@include('../snippets/footer.html')
+    <!--END:FOOTER-->
+</div>
+<!--BUILD:ENDSCRIPTS-->
+@@include('../snippets/endScripts.html')
+<!--END:ENDSCRIPTS-->
+<script>
+    var $email = $('#email');
+    var $hint = $("#hint");
+
+    $email.on('blur',function() {
+        $hint.css('display', 'none').empty();
+        $(this).mailcheck({
+            suggested: function(element, suggestion) {
+                if(!$hint.html()) {
+                    // First error - fill in/show entire hint element
+                    var suggestion = "Did you mean <a href='#' class='domain'><span class='suggestion'>" +
+                            "<span class='address'><b>" + suggestion.address + "</span>"
+                            + "@" + suggestion.domain +
+                            "</a></b></span>?";
+
+                    $hint.html(suggestion).fadeIn(150);
+                } else {
+                    // Subsequent errors
+                    $(".address").html(suggestion.address);
+                    $(".domain").html(suggestion.domain);
+                }
+            }
+        });
+    });
+
+    $hint.on('click', '.domain', function() {
+        // On click, fill in the field with the suggestion and remove the hint
+        $email.val($(".suggestion").text());
+        $hint.fadeOut(200, function() {
+            $(this).empty();
+        });
+        return false;
+    });
+    $("#contact-div").stick_in_parent();
+    Ladda.bind( 'input[type=submit]' );
+    Modernizr.load({
+        test: Modernizr.formvalidation,
+        yep : 'js/sendContact.js',
+        nope: ['js/sendContact.js', 'js/polyfiller.js', 'js/sendContactPolyfill.js']
+    });
+</script>
+</body>
+</html>

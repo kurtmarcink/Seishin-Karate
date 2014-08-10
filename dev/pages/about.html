@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--BUILD:MODERNIZR-->
+@@include('../snippets/modernizrCheck.html')
+<!--END:MODERNIZR-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Our Story - Seishin Martial Arts / Sport Karate Academy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--BUILD:BEGINSCRIPTS-->
+    @@include('../snippets/beginScripts.html')
+    <!--END:BEGINSCRIPTS-->
+</head>
+<body id="about">
+<span id="top"></span>
+<!--BUILD:NAVBAR-->
+@@include('../snippets/navbar.html')
+<!--END:NAVBAR-->
+<!--TODO: Add images-->
+<style>
+</style>
+<div id="about-wrapper">
+    <div class="jumbotron about-jumbo" id='heading'>
+        <div class="jumbo-container">
+            <h1>Quality Instruction For the Whole Family</h1>
+            <p style="text-align: center">Seishin has been an integral part of the Greater Boston community since 2000. We help students of all ages become great athletes, and better people.</p>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#dedication"><span class="glyphicon glyphicon-chevron-down" id='about-heading-arrow'></span></a></div>
+    </div>
+    <div class="img-holder" data-image="img/seishin_dedication.jpg"></div>
+    <span id="dedication"></span>
+    <div class="jumbotron about-jumbo">
+        <div class="jumbo-container">
+            <h1>Dedication</h1>
+            <p>At Seishin, we understand the value of hard work. Our background is in Kenpo, a practical martial art that enhances power and coordination. We are also one of the leading training centers in the nation for Sport Karate, a modern martial art that sees tremendous popularity in Hollywood. Our training sessions enforce strength, flexibility, and stamina through high-energy cardio, calisthenics, and plyometrics.</p>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#community"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+    </div>
+    <div class="img-holder" data-image="img/seishin_community.jpg"></div>
+    <span id="community"></span>
+    <div class="jumbotron about-jumbo">
+        <div class="jumbo-container">
+            <h1>Community</h1>
+            <p>Seishin is not just a karate school, it's a way to meet great people and make friends for life. Students and parents enjoy our many events throughout the year, including movie nights, holiday parties, tournaments, demonstrations, and charity events.</p>
+            <p>Students at Seishin love giving back. We have strong ties with local non-profit organizations, including The Ryan Harvey Foundation, Medway Public Library, and Pine Hill Community School Association.</p>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#success"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+    </div>
+    <div class="img-holder" data-image="img/seishin_success.jpg"></div>
+    <span id="success"></span>
+    <div class="jumbotron about-jumbo">
+        <div class="jumbo-container">
+            <h1>Success</h1>
+            <p>Our success speaks for itself. Seishin has produced nearly 20 State Champions, 14 National Champions, and Four World Champions. Eleven members of Seishin have gone on to join the elite "Team Straight Up", a world-renowned professional competition team. Students have been featured in documentaries, music videos, commercials, and on ESPN.</p>
+            <p>Our instructors also has extensive experience teaching students with ADD, ADHD, Dyslexia, Learning Delay, Autism, Down Syndrome, and Cerebral Palsy, as well as those with physical limitations</p>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#resources"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+    </div>
+    <span id="resources"></span>
+    <div class="jumbotron about-jumbo" id="resources-jumbo">
+        <div class="jumbo-container">
+            <h1>Resources</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul><p>Learn more about our <a href="locations.html"><b>locations</b></a></p></ul>
+                    <ul><p>Check out our elite <a href="programs.html"><b>programs</b></a></p></ul>
+                    <ul><p>Stay up-to-date on our <a href="social.html"><b>social page</b></a></p></ul>
+                </div>
+                <div class="col-md-6">
+                    <ul><p>Learn about the <a href="http://breakingmuscle.com/family-kids/7-reasons-why-your-child-should-practice-martial-arts" target="_blank"><b>benefits of the martial arts</b></a></p></ul>
+                    <ul><p>Find out about <a href="http://www.sportmartialarts.com/" target="_blank"><b>Sport Karate</b></a></p></ul>
+                    <ul><p><a href="contact.html"><b>Contact us</b></a> to get started today!</p></ul>
+                </div>
+            </div>
+        </div>
+        <div class="jumbo-arrow"><a data-scroll href="#top"><span class="glyphicon glyphicon-chevron-up" id="about-resources-arrow"></span></a></div>
+    </div>
+    <footer>
+        <p>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> <a class="no-link-decor" href="about.html">&nbsp;Seishin Martial Arts / Sport Karate Academy</a></p>
+    </footer>
+</div> <!-- /container -->
+<!--BUILD:ENDSCRIPTS-->
+@@include('../snippets/endScripts.html')
+<!--END:ENDSCRIPTS-->
+<script>
+    smoothScroll.init({
+        speed: 900,
+        easing: 'easeInQuad',
+        updateURL: false
+    });
+    var touch = Modernizr.touch;
+    console.log("Modernizr" + Modernizr.touch);
+    $('.img-holder').imageScroll({
+        extraHeight: 500,
+        imageAttribute: (touch === true) ? 'image-mobile' : 'image',
+        touch: touch
+    });
+</script>
+</body>
+</html>
