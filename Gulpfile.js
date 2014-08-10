@@ -1,3 +1,14 @@
+/**
+ * Gulp Task File for Seishin Martial Arts Website
+ * created by kurt marcinkiewicz
+ *
+ * To start, run the following in order:
+ * gulp bower
+ * gulp clean-dist
+ * gulp
+ * gulp publish
+**/
+
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
@@ -12,7 +23,7 @@ gulp.task('clean-bower', function () {
 });
 
 // grab libraries files from bower_components
-gulp.task('bower', ['clean-bower'], function() {
+gulp.task('bower', ['clean-bower'], function () {
 
     var jsFilter = plugins.filter('**/*.js');
     var cssFilter = plugins.filter('**/*.css');
@@ -33,7 +44,7 @@ gulp.task('bower', ['clean-bower'], function() {
         // grab vendor font files from bower_components, move to appropriate folder in dev
         .pipe(fontFilter)
         .pipe(plugins.flatten())
-        .pipe(gulp.dest('dev/fonts/vendor'))
+        .pipe(gulp.dest('dev/fonts/vendor'));
 });
 
 // clean the dist folder
@@ -43,73 +54,75 @@ gulp.task('clean-dist', function () {
 });
 
 // concat and uglify vendor js, then more to dist
-gulp.task('vendor-js', function() {
+gulp.task('vendor-js', function () {
     return gulp.src(['dev/js/vendor/jasny-bootstrap.js', 'dev/js/vendor/jquery.sticky-kit.js', 'dev/js/vendor/jquery.imageScroll.js', 'dev/js/vendor/mailcheck.js', 'dev/js/vendor/spin.js', 'dev/js/vendor/ladda.min.js', 'dev/js/vendor/smooth-scroll.js'])
         .pipe(plugins.changed('dist/js'))
         .pipe(plugins.concat('vendor.min.js'))
         .pipe(plugins.uglify())
         .pipe(plugins.filesize())
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/js'));
 });
 
 // concat and uglify custom js, then move to dist
-gulp.task('custom-js', function() {
+gulp.task('custom-js', function () {
     return gulp.src(['dev/js/custom/main.js', 'dev/js/custom/locationMap.js'])
         .pipe(plugins.changed('dist/js'))
         .pipe(plugins.concat('custom.min.js'))
         .pipe(plugins.uglify())
         .pipe(plugins.filesize())
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/js'));
 });
 
 // compile less (don't call directly)
-gulp.task('less', function() {
+gulp.task('less', function () {
     return gulp.src(['./dev/less/non-bower/bootstrap.less', './dev/less/custom/main.less'])
+        .pipe(changed('./dev/css/vendor', { extension: '.css' }))
         .pipe(plugins.less())
         .pipe(gulp.dest('./dev/css/vendor'));
 });
 
 // autoprefix and combine media queries (don't call directly)
-gulp.task('css-cleanup', ['less'], function() {
+gulp.task('css-cleanup', ['less'], function () {
     return gulp.src('./dev/css/vendor/main.css')
+        .pipe(changed('./dev/css/vendor'))
         .pipe(plugins.autoprefixer("last 4 versions", "> 1%", "ie 8", "ie 7"))
         .pipe(plugins.combineMediaQueries())
         .pipe(gulp.dest('./dev/css/vendor'));
 });
 
 // concat and minify css, then move to dist
-gulp.task('css', ['css-cleanup'], function() {
+gulp.task('css', ['css-cleanup'], function () {
     return gulp.src(['./dev/css/vendor/bootstrap.css', './dev/css/vendor/main.css', './dev/css/vendor/jasny-bootstrap.css', './dev/css/vendor/ladda-themeless.min.css'])
-//        .pipe(plugins.changed('./dist/css'))
+        .pipe(plugins.changed('./dist/css'))
         .pipe(plugins.concat('all.min.css'))
-        .pipe(plugins.minifyCss({keepSpecialComments:false}))
+        .pipe(plugins.minifyCss({keepSpecialComments: false}))
         .pipe(gulp.dest('./dist/css'));
 });
 
 
 // copy leftover css to dist folder
-gulp.task('copy-css', function() {
+gulp.task('copy-css', function () {
     return gulp.src(['dev/css/non-bower/social.min.css', 'dev/css/vendor/font-awesome.css'])
 //        .pipe(plugins.changed('./dist/css'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('dist/css'));
 });
 
 // copy fonts to dist folder
-gulp.task('copy-fonts', function() {
+gulp.task('copy-fonts', function () {
     return gulp.src(['dev/fonts/non-bower/*', 'dev/fonts/vendor/*'])
         .pipe(plugins.changed('./dist/fonts'))
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('dist/fonts'));
 });
 
 // copy leftover js to dist folder
-gulp.task('copy-js', function() {
+gulp.task('copy-js', function () {
     return gulp.src(['dev/js/custom/sendContact.js', 'dev/js/custom/sendContactPolyfill.js', 'dev/js/non-bower/**/*', 'dev/js/vendor/bootstrap.min.js', 'dev/js/vendor/jquery.min.js'])
         .pipe(plugins.changed('dist/js'))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/js'));
 });
 
 // include html snippets, inject assets, CDN-ize jquery & bootstrap, minify html, move to dist folder
-gulp.task('process-html', ['vendor-js', 'custom-js', 'css', 'copy-css', 'copy-fonts', 'copy-js'], function() {
+gulp.task('process-html', ['vendor-js', 'custom-js', 'css', 'copy-css', 'copy-fonts', 'copy-js'], function () {
     gulp.src(['./dev/pages/*'])
         .pipe(plugins.changed('./dist'))
         .pipe(plugins.fileInclude({
@@ -148,18 +161,16 @@ gulp.task('image-min', function () {
 });
 
 // Watch Files For Changes
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     plugins.livereload.listen();
     gulp.watch('dev/less/custom/**/*.less', ['css']);
     gulp.watch('./dev/js/custom/*.js', ['custom-js']);
     gulp.watch(['./dev/pages/*.html', 'dev/snippets/*.html'], ['process-html']);
     gulp.watch('dist/**/*').on('change', plugins.livereload.changed);
 });
-gulp.on('err', function(err){
-    console.log(err);
-});
 
-gulp.task('publish', function() {
+// Publish to amazon s3 bucket
+gulp.task('publish', function () {
 
     var credentials = JSON.parse(fs.readFileSync('aws-credentials.json', 'utf8'));
     var publisher = plugins.awspublish.create(credentials);
@@ -175,7 +186,10 @@ gulp.task('publish', function() {
         .pipe(plugins.awspublish.reporter());
 });
 
-// if desired, run 'gulp bower' before and 'gulp publish' after
+gulp.on('err', function(err){
+    console.log(err);
+});
+
 gulp.task('default', ['vendor-js', 'custom-js', 'css', 'copy-css', 'copy-fonts', 'copy-js', 'process-html', 'image-min', 'watch'], function() {
 });
 
