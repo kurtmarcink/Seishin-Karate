@@ -8,6 +8,6 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 config.codekit
 node_modules/
-grunt-aws.json
+aws-credentials.json
 dist/
 bower_components/
