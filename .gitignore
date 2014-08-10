@@ -3,5 +3,6 @@ node_modules/
 aws-credentials.json
 dist/
 bower_components/
-dev/css/vendor/bootstrap.css
-dev/css/vendor/main.css
+dev/css/vendor
+dev/fonts/vendor
+dev/js/vendor
