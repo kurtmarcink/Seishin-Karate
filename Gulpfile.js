@@ -76,7 +76,7 @@ gulp.task('custom-js', function () {
 // compile less (don't call directly)
 gulp.task('less', function () {
     return gulp.src(['./dev/less/non-bower/bootstrap.less', './dev/less/custom/main.less'])
-        .pipe(changed('./dev/css/vendor', { extension: '.css' }))
+        .pipe(plugins.changed('./dev/css/vendor', { extension: '.css' }))
         .pipe(plugins.less())
         .pipe(gulp.dest('./dev/css/vendor'));
 });
@@ -84,7 +84,7 @@ gulp.task('less', function () {
 // autoprefix and combine media queries (don't call directly)
 gulp.task('css-cleanup', ['less'], function () {
     return gulp.src('./dev/css/vendor/main.css')
-        .pipe(changed('./dev/css/vendor'))
+        .pipe(plugins.changed('./dev/css/vendor'))
         .pipe(plugins.autoprefixer("last 4 versions", "> 1%", "ie 8", "ie 7"))
         .pipe(plugins.combineMediaQueries())
         .pipe(gulp.dest('./dev/css/vendor'));
@@ -103,7 +103,7 @@ gulp.task('css', ['css-cleanup'], function () {
 // copy leftover css to dist folder
 gulp.task('copy-css', function () {
     return gulp.src(['dev/css/non-bower/social.min.css', 'dev/css/vendor/font-awesome.css'])
-//        .pipe(plugins.changed('./dist/css'))
+        .pipe(plugins.changed('./dist/css'))
         .pipe(gulp.dest('dist/css'));
 });
 
