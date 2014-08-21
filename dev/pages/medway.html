@@ -11,21 +11,6 @@
     <!--BUILD:BEGINSCRIPTS-->
     @@include('../snippets/beginScripts.html')
     <!--END:BEGINSCRIPTS-->
-    <style>
-        h2 > .fa-circle {
-            color:#6f6f6f;
-            font-size: 15px;
-            vertical-align: middle;
-        }
-        #map {
-            height: 500px;
-            width: 100%;
-            margin-top: 20px;
-        }
-        .tooltip {
-            position: fixed;
-        }
-    </style>
 </head>
 <body id="medway">
 <!--BUILD:NAVBAR-->
@@ -44,23 +29,43 @@
     </ol>
     <div class="row">
         <div class="col-md-6">
-            <h2>Medway</h2>
+            <h2 id="Medway-Title">Medway&nbsp;<i class="fa fa-circle" id="Place-Status" data-toggle="tooltip" data-placement="right" title="Status Unavailable" style="font-size: 15px; vertical-align: middle;"></i></h2>
+            <div class="btn-group" style="margin-bottom: 10px">
+
+                <a href="mailto:tim@seishinsportkarate.com?Subject=Website%20Inquiry" role="button" target="_blank" class="btn btn-default locationTooltip" data-toggle="tooltip" data-placement="bottom" title="Email"><span class="glyphicon glyphicon-envelope"></span></a>
+                <a href="tel:508-533-1501" role="button" target="_blank" class="btn btn-default locationTooltip" data-toggle="tooltip" data-placement="bottom" title="Call"><span class="glyphicon glyphicon-phone-alt"></span></a>
+                <a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" role="button" target="_blank" class="btn btn-default locationTooltip" data-toggle="tooltip" data-placement="bottom" title="Directions"><span class="glyphicon glyphicon-map-marker"></span></a>
+                <a href="#" role="button" target="_blank" class="btn btn-default locationTooltip" data-toggle="tooltip" data-placement="bottom" title="Schedule"><span class="glyphicon glyphicon-calendar"></span></a>
+                <a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademyMedway/about?hl=en" role="button" target="_blank" class="btn btn-default locationTooltip" data-toggle="tooltip" data-placement="bottom" title="Review"><span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
+            <br>
             <b>Chief Instructor:&nbsp;</b>Tim Pettepit<br>
             <address>
-                <b>Address:&nbsp;</b><a href="https://www.google.com/maps/place/Seishin+Martial+Arts+%2F+Sport+Karate+Academy/@42.151525,-71.412044,17z" target="_blank">74 Main St, Medway, MA 02053</a><br>
+                <b>Address:&nbsp;</b><a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" target="_blank">74 Main St, Medway, MA 02053</a><br>
                 <b>Phone:&nbsp;</b><a href="tel:508-533-1501">(508) 533-1501</a><br>
             </address>
             <p class="text-justify">Our original location, our Medway academy has been providing quality martial arts training for over a decade and is conveniently located near Milford, Bellingham, Franklin, Millis, Holliston, and Norfolk. Check out photos of our Medway school exclusively on our facebook page!</p>
+            <div class="medway-slider center-block" style="width: 80%; margin-top: 20px;">
+                <div><img src="img/medway-slide-banners.jpg" alt="Kanji Banners" class="img-thumbnail center-block"></div>
+                <div><img src="img/medway-slide-dojo.jpg" alt="Medway Training Area" class="img-thumbnail center-block"></div>
+                <div><img src="img/medway-slide-equipment.jpg" alt="Medway Equipment Area" class="img-thumbnail center-block"></div>
+                <div><img src="img/medway-slide-light.jpg" alt="Medway-Lobby-Decor" class="img-thumbnail center-block"></div>
+                <div><img src="img/medway-slide-storefront.jpg" alt="Medway Storefront" class="img-thumbnail center-block"></div>
+
+            </div>
         </div>
         <div class="col-md-6">
-        <iframe
-                width="100%"
-                height="400"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Seishin+Karate+Medway,+MA">
-        </iframe>
+            <div style='margin-top: 60px'>
+                <iframe
+                        width="100%"
+                        height="400"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZAxOGO7gJ0zK_esTBoQ6eifEUmGCTQI4&q=Seishin+Karate+Medway,+MA">
+                </iframe>
+            </div>
         </div>
     </div>
+    <div id="dummyDiv"></div>
     <!--BUILD:FOOTER-->
     @@include('../snippets/footer.html')
     <!--END:FOOTER-->
@@ -69,5 +74,16 @@
 <!--BUILD:ENDSCRIPTS-->
 @@include('../snippets/endScripts.html')
 <!--END:ENDSCRIPTS-->
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script>
+    $(function () {
+        locationStatusMarker({placeId: "ChIJ0fcOX_Fw5IkRG9qI1CSPhec"});
+        $('.medway-slider').slick({
+            'autoplay':true,
+            'dots': true,
+            'arrows': true
+        });
+    });
+</script>
 </body>
 </html>

@@ -9,6 +9,8 @@ $(function() {
     $("#social a:contains('Social')").parent().addClass('active');
     $("#contact a:contains('Contact Us')").parent().addClass('active');
     $("a.tooltipLink").tooltip();
+    $(".locationTooltip").tooltip({container: 'body'});
+
 
     var aboutAngle = 180,
         locationsAngle = 180;
@@ -93,4 +95,45 @@ $(function() {
             $( '#locations-nav' ).slideUp( 300 );
         }
     });
+    $(".programs-section").removeClass("active");
 });
+
+$(document).on('load', function () {
+    $(document.body).scrollspy('refresh')
+});
+
+$('.programs-sidebar').affix({
+    offset: {
+        top: 266
+        , bottom: function () {
+            return (this.bottom = $('.footer').outerHeight(true) + 50)
+        }
+    }
+});
+$('#programs').scrollspy({
+    target: '.programs-sidebar',
+    offset: 10
+});
+function locationStatusMarker (placeId) {
+    var $dummyDivHtml = $('#dummyDiv')[0],
+        $placeStatus = $('#Place-Status'),
+        service = new google.maps.places.PlacesService($dummyDivHtml);
+
+    service.getDetails(placeId, function (place, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            if (place.opening_hours.open_now) {
+                $placeStatus.attr({
+                    style: 'color:#23D613;font-size: 15px;vertical-align:middle;',
+                    title: 'Open Now'
+                });
+            }
+            else {
+                $placeStatus.attr({
+                    style: 'color:#ed4b43;font-size: 15px;vertical-align:middle;',
+                    title: 'Closed Now'
+                });
+            }
+            $placeStatus.tooltip();
+        }
+    })
+}

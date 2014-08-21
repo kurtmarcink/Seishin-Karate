@@ -6,7 +6,12 @@
  * gulp bower
  * gulp clean-dist
  * gulp
+ *
+ * When you're ready to publish to the S3 bucket, run the following command:
  * gulp publish
+ *
+ * NOTE: THE aws-credentials.json FILE MUST BE IN THE PROJECT DIRECTORY TO
+ * PUBLISH TO S3
 **/
 
 var gulp = require('gulp');
@@ -55,7 +60,7 @@ gulp.task('clean-dist', function () {
 
 // concat and uglify vendor js, then more to dist
 gulp.task('vendor-js', function () {
-    return gulp.src(['dev/js/vendor/jasny-bootstrap.js', 'dev/js/vendor/jquery.sticky-kit.js', 'dev/js/vendor/jquery.imageScroll.js', 'dev/js/vendor/mailcheck.js', 'dev/js/vendor/spin.js', 'dev/js/vendor/ladda.min.js', 'dev/js/vendor/smooth-scroll.js'])
+    return gulp.src(['dev/js/vendor/jasny-bootstrap.js', 'dev/js/vendor/jquery.sticky-kit.js', 'dev/js/vendor/jquery.imageScroll.js', 'dev/js/vendor/mailcheck.js', 'dev/js/vendor/spin.js', 'dev/js/vendor/ladda.min.js', 'dev/js/vendor/smooth-scroll.js', 'dev/js/vendor/slick.js'])
         .pipe(plugins.changed('dist/js'))
         .pipe(plugins.concat('vendor.min.js'))
         .pipe(plugins.uglify())
@@ -76,7 +81,6 @@ gulp.task('custom-js', function () {
 // compile less (don't call directly)
 gulp.task('less', function () {
     return gulp.src(['./dev/less/non-bower/bootstrap.less', './dev/less/custom/main.less'])
-        .pipe(plugins.changed('./dev/css/vendor', { extension: '.css' }))
         .pipe(plugins.less())
         .pipe(gulp.dest('./dev/css/vendor'));
 });
@@ -92,7 +96,7 @@ gulp.task('css-cleanup', ['less'], function () {
 
 // concat and minify css, then move to dist
 gulp.task('css', ['css-cleanup'], function () {
-    return gulp.src(['./dev/css/vendor/bootstrap.css', './dev/css/vendor/main.css', './dev/css/vendor/jasny-bootstrap.css', './dev/css/vendor/ladda-themeless.min.css'])
+    return gulp.src(['./dev/css/vendor/bootstrap.css', './dev/css/vendor/slick.css', './dev/css/vendor/main.css', './dev/css/vendor/jasny-bootstrap.css', './dev/css/vendor/ladda-themeless.min.css'])
         .pipe(plugins.changed('./dist/css'))
         .pipe(plugins.concat('all.min.css'))
         .pipe(plugins.minifyCss({keepSpecialComments: false}))

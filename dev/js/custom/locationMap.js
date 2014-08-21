@@ -26,13 +26,13 @@ function initialize() {
                 if (natickJson.opening_hours.open_now) {
                     $('#Natick-Status').attr({
                         style: 'color:#23D613;font-size: 15px;vertical-align:middle;',
-                        title: 'Open Now',
+                        title: 'Open Now'
                     });
                 }
                 else {
                     $('#Natick-Status').attr({
                         style: 'color:#ed4b43;font-size: 15px;vertical-align:middle;',
-                        title: 'Closed Now',
+                        title: 'Closed Now'
                     });
                 }
                 $('#Natick-Status').tooltip();
@@ -44,13 +44,13 @@ function initialize() {
                 if (medwayJson.opening_hours.open_now) {
                     $('#Medway-Status').attr({
                         style: 'color:#23D613;font-size: 15px;vertical-align:middle;',
-                        title: 'Open Now',
+                        title: 'Open Now'
                     });
                 }
                 else {
                     $('#Medway-Status').attr({
                         style: 'color:#ed4b43;font-size: 15px;vertical-align:middle;',
-                        title: 'Closed Now',
+                        title: 'Closed Now'
                     });
                 }
                 $('#Medway-Status').tooltip();
@@ -62,14 +62,14 @@ function initialize() {
                 if (sherbornJson.opening_hours.open_now) {
                     $('#Sherborn-Status').attr({
                         style: 'color:#23D613;font-size: 15px;vertical-align:middle;',
-                        title: 'Open Now',
+                        title: 'Open Now'
                     });
 
                 }
                 else {
                     $('#Sherborn-Status').attr({
                         style: 'color:#ed4b43;font-size: 15px;vertical-align:middle;',
-                        title: 'Closed Now',
+                        title: 'Closed Now'
                     });
                 }
                 $('#Sherborn-Status').tooltip();
@@ -100,7 +100,7 @@ function initialize() {
                                 '<a href="tel:508-533-1501">(508) 533-1501</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+74+Main+St,+Medway,+MA+02053" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
                                 '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademyMedway/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
-                                '<a href="#Medway"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
+                                '<a href="medway.html"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(medwayJson);
                         }
                         else if (marker.title === "Seishin Sherborn") {
@@ -108,7 +108,7 @@ function initialize() {
                                 '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts+%2F+Sport+Karate+Academy,+11+S+Main+St,+Sherborn,+MA+01770" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
                                 '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademySherborn/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 4px; padding-right: 3px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
-                                '<a href="#Sherborn"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
+                                '<a href="sherborn.html"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(sherbornJson);
                         }
                         else if (marker.title === "Seishin Natick") {
@@ -116,20 +116,20 @@ function initialize() {
                                 '<a href="tel:508-433-0901">(508) 433-0901</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Seishin+Martial+Arts%2F+Sport+Karate+Academy,+124+E+Central+St,+Natick,+MA+01760" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" data-toggle="tooltip" data-placement="bottom" title="Directions"></i></a>' +
                                 '<a href="https://plus.google.com/+SeishinMartialArtsSportKarateAcademyNatick/about?hl=en" target="_blank"><i class="fa fa-map-marker" style="font-size: 27px;padding-left: 5px; padding-right: 5px;" data-toggle="tooltip" data-placement="bottom" title="Write A Review"></i></a>' +
-                                '<a href="#Natick"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
+                                '<a href="natick.html"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>' +
                                 getPhotos(natickJson);
                         }
                         else if (marker.title === "Seishin Wellesley") {
                             html = '<b>Seishin Wellesley</b>&nbsp;&nbsp;' + '<i class="fa fa-circle" style="color:#707070" data-toggle="tooltip" title="Status Unavailable">' + '<br>' +
                                 '<a href="tel:508-319-1775">(508) 319-1775</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=Miss+Michelle\'s+Center+for+the+Performing+Arts,+159+Linden+St,+Wellesley,+MA+02482" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" title="Directions to Seishin in Wellesley"></i></a>' +
-                                '<a href="#Wellesley"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>';
+                                '<a href="wellesley.html"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>';
                         }
                         else if (marker.title === "Seishin Weston") {
                             html = '<b>Seishin Weston</b>&nbsp;&nbsp;' + '<i class="fa fa-circle" style="color:#707070" data-toggle="tooltip" title="Status Unavailable">' + '<br>' +
                                 '<a href="tel:508-319-1775">(508) 319-1775</a><br>' +
                                 '<a href="https://maps.google.com/maps?saddr=My+Location&daddr=The+Rivers+School,+333+Winter+Street,+Weston,+MA+02493" target="_blank"><i class="fa fa-location-arrow" style="font-size: 27px; padding-right: 4px" title="Directions to Seishin in Weston"></i></a>' +
-                                '<a href="#Weston"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>';
+                                '<a href="weston.html"><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="More Info" style="font-size: 27px; margin-left: 6px"></i></a>' + '<br>';
                         }
                         infowindow.setContent(html);
                         infowindow.open(map, marker);
