@@ -23,15 +23,81 @@
     </div>
 </main>
 <div class="container">
-    <div id="instructors-slider-main">
-        <div>your content 1</div>
-        <div>your content 2</div>
-        <div>your content 3</div>
+    <div class="instructor-slider center-block" style="width: 70%; margin-top: 20px;">
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Eric Hung</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-eric.jpg" alt="Eric Hung">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Tim Pettepit</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-tim.jpg" alt="Tim Pettepit">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Chuck Leverone</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-chuck.jpg" alt="Chuck Leverone">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Emily Civetti</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-emily.jpg" alt="Emily Civetti">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Seth Bittig</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-seth.jpg" alt="Seth Bittig">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-8">
+                    <h1 style="color: black">Steven Hung</h1>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/instructor-steven.jpg" alt="Steven Hung">
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="instructors-slider-nav">
-        <div>your content 1</div>
-        <div>your content 2</div>
-        <div>your content 3</div>
+    <div class="instructor-nav-slider center-block" style="width: 70%; margin-top: 20px;">
+        <div class='nav-image' title="Eric Hung"><img src="img/headshot-eric.jpg" alt="Eric Hung Headshot" class="img-thumbnail center-block"></div>
+        <div class='nav-image' title="Tim Pettepit"><img src="img/headshot-tim.jpg" alt="Tim Pettepit Headshot" class="img-thumbnail center-block"></div>
+        <div class='nav-image' title="Chuck Leverone"><img src="img/headshot-chuck.jpg" alt="Chuck Leverone Headshot" class="img-thumbnail center-block"></div>
+        <div class='nav-image' title="Emily Civetti"><img src="img/headshot-emily.jpg" alt="Emily Civetti Headshot" class="img-thumbnail center-block"></div>
+        <div class='nav-image' title="Seth Bittig"><img src="img/headshot-seth.jpg" alt="Seth Bittig Headshot" class="img-thumbnail center-block"></div>
+        <div class='nav-image' title="Steven Hung"><img src="img/headshot-steven.jpg" alt="Steven Hung Headshot" class="img-thumbnail center-block"></div>
     </div>
 </div>
 <!--BUILD:FOOTER-->
@@ -42,19 +108,21 @@
 @@include('../snippets/endScripts.html')
 <!--END:ENDSCRIPTS-->
 <script>
-    $(document).ready(function() {
-        $('#instructors-slider-main').slick({
+    $(function () {
+        $('.instructor-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             fade: true,
-            asNavFor: '#instructor-sliders-nav'
+            asNavFor: '.instructor-nav-slider'
         });
-        $('#instructor-sliders-nav').slick({
-            slidesToShow: 3,
+        $('.instructor-nav-slider').slick({
+            slidesToShow: 5,
             slidesToScroll: 1,
-            asNavFor: '#instructors-slider-main',
-            dots: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            asNavFor: '.instructor-slider',
+            dots: false,
             centerMode: true,
             focusOnSelect: true
         });
