@@ -19,7 +19,7 @@ This is a Twitter Bootstrap Application. To change the styling of the site, navi
 All of the javascript is under `js/`. `main.js` includes smaller page-agnostic javascript features, the others include larger, page-specific features. Everything is concatenated and minified for deployment... this is just for organizational purposes in development.
 
 #### HTML
-HTML is managed in two directories, `pages/` and `snippets/`. `pages/` include the different site pages. `snippets` are code snippets to be included on multiple pages, like the navbar, footer, etc. These are injected to the pages when Gulp builds the project.
+HTML is managed in two directories, `pages/` and `snippets/`. `pages/` include the different site pages. `snippets/` are code snippets to be included on multiple pages, like the navbar, footer, etc. These are injected into the pages when Gulp builds the project.
 
 #### Build/Deployment
 Project building and deployment is handled by Gulp. Navigate to the file `Gulpfile.js` in the top-level directory and follow the comments in the file to build/deploy. The contents of the `dev` folder is built into the folder `dist`. To deploy to the AWS S3 bucket, you need a file `aws-credentials.json` that contains the creds for the bucket. This file is not under version control for security purposes.
